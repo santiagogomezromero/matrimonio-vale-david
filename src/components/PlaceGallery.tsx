@@ -63,7 +63,7 @@ const places: Place[] = [
     category: 'valley',
     descriptionEs: 'Fortaleza inca con impresionantes terrazas y el único pueblo inca aún habitado.',
     descriptionEn: 'Inca fortress with impressive terraces and the only still-inhabited Inca town.',
-    image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/f_webp/San_Blas_antiguo_gxzega',
+    image: 'https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800&auto=format&fit=crop',
     duration: '3-4 hrs',
     rating: 4.9,
     mapLink: 'https://maps.google.com/?q=Ollantaytambo'
@@ -75,7 +75,7 @@ const places: Place[] = [
     category: 'valley',
     descriptionEs: 'Ruinas incas en la montaña y famoso mercado artesanal dominical.',
     descriptionEn: 'Mountain Inca ruins and famous Sunday artisan market.',
-    image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/f_webp/YL6XPN6O5JG6TJL7FAJJ7WYVNY_fa9fzx',
+    image: 'https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?w=800&auto=format&fit=crop',
     duration: '3-4 hrs',
     rating: 4.7,
     mapLink: 'https://maps.google.com/?q=Pisac+Peru'
@@ -87,7 +87,7 @@ const places: Place[] = [
     category: 'valley',
     descriptionEs: 'Terrazas circulares incas usadas como laboratorio agrícola experimental.',
     descriptionEn: 'Circular Inca terraces used as an experimental agricultural laboratory.',
-    image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/f_webp/machu-picchu-ruinas-naturaleza-llamas_etvodn',
+    image: 'https://images.unsplash.com/photo-1531065208531-4036c0dba3ca?w=800&auto=format&fit=crop',
     duration: '1-2 hrs',
     rating: 4.6,
     mapLink: 'https://maps.google.com/?q=Moray+Peru'
@@ -99,7 +99,7 @@ const places: Place[] = [
     category: 'valley',
     descriptionEs: 'Miles de pozas de sal en las laderas, explotadas desde tiempos preincaicos.',
     descriptionEn: 'Thousands of salt pools on the hillsides, exploited since pre-Inca times.',
-    image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/f_webp/san_blas_portada_fvwoyf',
+    image: 'https://images.unsplash.com/photo-1580974852861-c381510bc98a?w=800&auto=format&fit=crop',
     duration: '1-2 hrs',
     rating: 4.7,
     mapLink: 'https://maps.google.com/?q=Salineras+de+Maras'
@@ -123,7 +123,7 @@ const places: Place[] = [
     category: 'beyond',
     descriptionEs: 'Montaña multicolor a 5,200 metros de altura, una maravilla natural única.',
     descriptionEn: 'Multicolored mountain at 5,200 meters altitude, a unique natural wonder.',
-    image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/f_webp/ruinas-de-saqsaywaman-cusco_rm66q5',
+    image: 'https://images.unsplash.com/photo-1580968614968-19dc85a9f85e?w=800&auto=format&fit=crop',
     duration: 'Full day',
     rating: 4.8,
     mapLink: 'https://maps.google.com/?q=Rainbow+Mountain+Peru'

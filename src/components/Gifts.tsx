@@ -1,25 +1,52 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { Gift, CreditCard, Smartphone } from 'lucide-react';
+import { IncaDivider, Chakana } from '@/components/ui/inca-patterns';
 
 export const Gifts = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="gifts" className="min-h-screen py-20 px-4 bg-muted">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex justify-center mb-6 animate-fade-in">
-          <Gift className="w-16 h-16 text-primary" />
+    <section id="gifts" className="min-h-screen py-20 px-4 bg-muted relative overflow-hidden">
+      {/* Decorative background */}
+      <div className="absolute inset-0 opacity-[0.03]" 
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A86232' fill-opacity='1'%3E%3Cpath d='M30 0l30 30-30 30L0 30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundSize: '60px 60px'
+        }}
+      />
+      
+      <Chakana className="absolute top-20 right-10 w-20 h-20 opacity-10" />
+      <Chakana className="absolute bottom-20 left-10 w-16 h-16 opacity-10" />
+      
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="text-center mb-12">
+          <div className="flex justify-center mb-4">
+            <div className="relative">
+              <Gift className="w-16 h-16 text-primary" />
+              <Chakana className="absolute -top-2 -right-2 w-6 h-6 opacity-50" />
+            </div>
+          </div>
+          
+          <h2 className="text-4xl md:text-5xl font-display text-primary uppercase tracking-wider mb-4">
+            {t('gifts.title')}
+          </h2>
+          <IncaDivider className="max-w-md mx-auto" />
         </div>
-        
-        <h2 className="text-4xl md:text-5xl font-display text-center mb-4 text-primary uppercase tracking-wider">
-          {t('gifts.title')}
-        </h2>
-        <div className="h-1 w-24 bg-primary mx-auto mb-12"></div>
 
         <div className="grid md:grid-cols-2 gap-8 items-start">
           {/* Left Column - Message */}
           <div className="space-y-6 animate-fade-in">
+            {/* Decorative image */}
+            <div className="aspect-[16/9] rounded-xl overflow-hidden shadow-lg mb-6">
+              <img 
+                src="https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110351/IMG_5943_lhcbji.jpg"
+                alt="Vale & David"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            
             <p className="text-lg leading-relaxed text-foreground">
               {t('gifts.message1')}
             </p>
@@ -32,11 +59,15 @@ export const Gifts = () => {
           </div>
 
           {/* Right Column - Bank Details */}
-          <Card className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
+          <Card className="animate-fade-in bg-card/95 backdrop-blur-sm" style={{ animationDelay: '0.1s' }}>
             <CardContent className="p-6 space-y-6">
-              <h3 className="text-xl font-display text-center text-primary uppercase mb-4">
-                {t('gifts.banking.title')}
-              </h3>
+              <div className="flex items-center justify-center gap-3">
+                <Chakana className="w-5 h-5 opacity-50" />
+                <h3 className="text-xl font-display text-center text-primary uppercase">
+                  {t('gifts.banking.title')}
+                </h3>
+                <Chakana className="w-5 h-5 opacity-50" />
+              </div>
               
               {/* BCP Soles */}
               <div className="space-y-2 pb-4 border-b">
