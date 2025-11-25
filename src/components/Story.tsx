@@ -1,14 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { IncaDivider, Chakana, MountainSilhouette } from '@/components/ui/inca-patterns';
-import { Heart, MapPin, Calendar, Sparkles } from 'lucide-react';
-
-import japan1 from '@/assets/japan-1.jpg';
-import japan2 from '@/assets/japan-2.jpg';
-import japan3 from '@/assets/japan-3.jpg';
-import peru1 from '@/assets/peru-1.jpg';
-import peru2 from '@/assets/peru-2.jpg';
-import peru3 from '@/assets/peru-3.jpg';
+import { Heart, MapPin, Calendar, Sparkles, Plane } from 'lucide-react';
 
 export const Story = () => {
   const { t, language } = useLanguage();
@@ -48,13 +41,44 @@ export const Story = () => {
     },
   ];
 
-  const galleryImages = [
-    { src: japan1, alt: 'Engagement in Japan', location: 'Kyoto, Japan' },
-    { src: japan2, alt: 'Engagement in Japan', location: 'Tokyo, Japan' },
-    { src: japan3, alt: 'Engagement in Japan', location: 'Osaka, Japan' },
-    { src: peru1, alt: 'Life in Peru', location: 'Cusco, Peru' },
-    { src: peru2, alt: 'Life in Peru', location: 'Sacred Valley, Peru' },
-    { src: peru3, alt: 'Life in Peru', location: 'Lima, Peru' },
+  const galleryCategories = [
+    {
+      titleEs: 'La Propuesta en Japón',
+      titleEn: 'The Proposal in Japan',
+      icon: Sparkles,
+      images: [
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/f_webp/IMG_7351_2_wt2gyz', alt: 'Japan Trip', location: 'Japan' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110141/IMG_7219_fqs5un.jpg', alt: 'Proposal', location: 'Japan' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110141/IMG_7170_me7goa.jpg', alt: 'Proposal', location: 'Japan' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110140/IMG_7205_jwjseo.jpg', alt: 'Proposal', location: 'Japan' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110141/IMG_7223_npq7ph.jpg', alt: 'Proposal', location: 'Japan' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110140/IMG_7196_wni8xp.jpg', alt: 'Proposal', location: 'Japan' },
+      ]
+    },
+    {
+      titleEs: 'Nuestra Vida en Perú',
+      titleEn: 'Our Life in Peru',
+      icon: Heart,
+      images: [
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110246/IMG_8020_uwzc1c.jpg', alt: 'Life in Peru', location: 'Peru' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110243/IMG_7753_jxuijl.jpg', alt: 'Life in Peru', location: 'Peru' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110236/IMG_7592_qdfjwm.jpg', alt: 'Life in Peru', location: 'Peru' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110232/IMG_4636_fkzoml.jpg', alt: 'Life in Peru', location: 'Peru' },
+      ]
+    },
+    {
+      titleEs: 'Nuestros Viajes',
+      titleEn: 'Our Travels',
+      icon: Plane,
+      images: [
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110352/IMG_9506_u08hrv.jpg', alt: 'Travels', location: 'Adventure' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110351/IMG_5943_lhcbji.jpg', alt: 'Travels', location: 'Adventure' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110348/IMG_5031_jmxcfm.jpg', alt: 'Travels', location: 'Adventure' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110334/IMG_6210_xvc3zq.jpg', alt: 'Travels', location: 'Adventure' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110325/IMG_3872_lhctjn.jpg', alt: 'Travels', location: 'Adventure' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110322/IMG_1160_fq1o3m.jpg', alt: 'Travels', location: 'Adventure' },
+      ]
+    }
   ];
 
   return (
@@ -166,36 +190,43 @@ export const Story = () => {
           </div>
         </div>
 
-        {/* Photo Gallery - Enhanced */}
-        <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
+        {/* Photo Gallery - Categorized */}
+        <div className="animate-fade-in space-y-16" style={{ animationDelay: '0.3s' }}>
           <h3 className="text-2xl font-display text-center mb-8 text-primary uppercase">
             {t('story.photos.title')}
           </h3>
           <IncaDivider className="max-w-xs mx-auto mb-12" />
           
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-            {galleryImages.map((image, index) => (
-              <div 
-                key={index}
-                className="group relative aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500"
-                style={{ animationDelay: `${0.4 + index * 0.1}s` }}
-              >
-                <img 
-                  src={image.src} 
-                  alt={image.alt} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
-                  loading="lazy" 
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <p className="text-sm font-medium flex items-center gap-1">
-                    <MapPin className="w-3 h-3" />
-                    {image.location}
-                  </p>
+          {galleryCategories.map((category, catIndex) => {
+            const CategoryIcon = category.icon;
+            return (
+              <div key={catIndex} className="space-y-6">
+                <h4 className="text-xl font-display text-center text-foreground flex items-center justify-center gap-2">
+                  <CategoryIcon className="w-5 h-5 text-primary" />
+                  {language === 'es' ? category.titleEs : category.titleEn}
+                </h4>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                  {category.images.map((image, index) => (
+                    <div 
+                      key={index}
+                      className="group relative aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500"
+                    >
+                      <img 
+                        src={image.src} 
+                        alt={image.alt} 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                        loading="lazy"
+                        onError={(e) => {
+                          e.currentTarget.src = '/placeholder.svg';
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>
