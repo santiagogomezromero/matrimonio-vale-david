@@ -29,15 +29,15 @@ export const Hero = () => {
 
       {/* Decorative sun rays */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] opacity-10 pointer-events-none">
-        <IntiSun className="w-full h-full text-secondary animate-spin-slow" />
+        <IntiSun className="w-full h-full text-amber-400 animate-spin-slow" />
       </div>
 
       {/* Floating stars */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <IncaStar className="absolute top-[15%] left-[10%] w-4 h-4 text-secondary/30 animate-pulse" />
-        <IncaStar className="absolute top-[25%] right-[15%] w-3 h-3 text-secondary/20 animate-pulse" style={{ animationDelay: '0.5s' }} />
-        <IncaStar className="absolute top-[40%] left-[20%] w-2 h-2 text-secondary/25 animate-pulse" style={{ animationDelay: '1s' }} />
-        <IncaStar className="absolute bottom-[30%] right-[25%] w-3 h-3 text-secondary/20 animate-pulse" style={{ animationDelay: '1.5s' }} />
+        <IncaStar className="absolute top-[15%] left-[10%] w-4 h-4 text-amber-400/30 animate-pulse" />
+        <IncaStar className="absolute top-[25%] right-[15%] w-3 h-3 text-amber-400/20 animate-pulse" style={{ animationDelay: '0.5s' }} />
+        <IncaStar className="absolute top-[40%] left-[20%] w-2 h-2 text-amber-400/25 animate-pulse" style={{ animationDelay: '1s' }} />
+        <IncaStar className="absolute bottom-[30%] right-[25%] w-3 h-3 text-amber-400/20 animate-pulse" style={{ animationDelay: '1.5s' }} />
       </div>
 
       {/* Content */}
@@ -46,7 +46,7 @@ export const Hero = () => {
           {/* Couple Photo */}
           <div className="flex justify-center mb-8">
             <div className="relative">
-              <div className="w-44 h-44 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-secondary/50 shadow-2xl ring-4 ring-secondary/20 ring-offset-4 ring-offset-transparent">
+              <div className="w-44 h-44 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-amber-400/50 shadow-2xl ring-4 ring-amber-400/20 ring-offset-4 ring-offset-transparent">
                 <img 
                   src="https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110246/IMG_8020_uwzc1c.jpg" 
                   alt="Valeria & David"
@@ -54,7 +54,7 @@ export const Hero = () => {
                 />
               </div>
               {/* Decorative Sun */}
-              <IntiSun className="absolute -bottom-3 -right-3 w-12 h-12 text-secondary drop-shadow-lg" />
+              <IntiSun className="absolute -bottom-3 -right-3 w-12 h-12 text-amber-400 drop-shadow-lg" />
             </div>
           </div>
 
@@ -76,9 +76,9 @@ export const Hero = () => {
             </h1>
             {/* Decorative line under title */}
             <div className="flex items-center justify-center gap-3 mt-4">
-              <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent to-secondary/70" />
-              <IntiSun className="w-6 h-6 text-secondary" />
-              <div className="h-px w-16 md:w-24 bg-gradient-to-l from-transparent to-secondary/70" />
+              <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent to-amber-400/70" />
+              <IntiSun className="w-6 h-6 text-amber-400" />
+              <div className="h-px w-16 md:w-24 bg-gradient-to-l from-transparent to-amber-400/70" />
             </div>
           </div>
           

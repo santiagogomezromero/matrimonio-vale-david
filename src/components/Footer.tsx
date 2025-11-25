@@ -19,10 +19,10 @@ export const Footer = () => {
 
       {/* Decorative elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <IncaStar className="absolute top-10 left-[10%] w-3 h-3 text-secondary/20 animate-pulse" />
-        <IncaStar className="absolute top-20 right-[15%] w-2 h-2 text-secondary/15 animate-pulse" style={{ animationDelay: '0.5s' }} />
-        <IncaStar className="absolute bottom-20 left-[20%] w-2 h-2 text-secondary/20 animate-pulse" style={{ animationDelay: '1s' }} />
-        <IncaStar className="absolute top-16 left-[50%] w-2 h-2 text-secondary/10 animate-pulse" style={{ animationDelay: '1.5s' }} />
+        <IncaStar className="absolute top-10 left-[10%] w-3 h-3 text-amber-400/20 animate-pulse" />
+        <IncaStar className="absolute top-20 right-[15%] w-2 h-2 text-amber-400/15 animate-pulse" style={{ animationDelay: '0.5s' }} />
+        <IncaStar className="absolute bottom-20 left-[20%] w-2 h-2 text-amber-400/20 animate-pulse" style={{ animationDelay: '1s' }} />
+        <IncaStar className="absolute top-16 left-[50%] w-2 h-2 text-amber-400/10 animate-pulse" style={{ animationDelay: '1.5s' }} />
       </div>
 
       <div className="relative z-10 container mx-auto px-4 pt-16 pb-8">
@@ -46,13 +46,13 @@ export const Footer = () => {
           </h2>
           
           <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="h-px w-16 bg-secondary/30" />
-            <IntiSun className="w-6 h-6 text-secondary/60" />
-            <div className="h-px w-16 bg-secondary/30" />
+            <div className="h-px w-16 bg-amber-400/30" />
+            <IntiSun className="w-6 h-6 text-amber-400/60" />
+            <div className="h-px w-16 bg-amber-400/30" />
           </div>
           
-          <p className="font-script text-xl text-secondary/80 mb-2">
-            27.09.2025
+          <p className="font-script text-xl text-amber-400/80 mb-2">
+            01.05.2026
           </p>
           <p className="text-sm text-primary-foreground/60">
             Valle Sagrado, Cusco, Perú
@@ -71,7 +71,7 @@ export const Footer = () => {
             <a
               key={link.href}
               href={link.href}
-              className="text-primary-foreground/70 hover:text-secondary transition-colors uppercase tracking-wider"
+              className="text-primary-foreground/70 hover:text-amber-400 transition-colors uppercase tracking-wider"
             >
               {link.label}
             </a>
@@ -79,7 +79,7 @@ export const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-secondary/30 to-transparent mb-8" />
+        <div className="h-px bg-gradient-to-r from-transparent via-amber-400/30 to-transparent mb-8" />
 
         {/* Copyright */}
         <div className="flex flex-col items-center gap-2 text-xs text-primary-foreground/50">
