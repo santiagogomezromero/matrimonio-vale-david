@@ -1,6 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { Mail, Phone } from 'lucide-react';
+import { IncaDivider, Chakana, MountainSilhouette } from '@/components/ui/inca-patterns';
 
 export const Contact = () => {
   const { t } = useLanguage();
@@ -27,28 +28,46 @@ export const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="min-h-screen py-20 px-4 bg-muted flex items-center">
-      <div className="max-w-5xl mx-auto w-full">
-        <h2 className="text-4xl md:text-5xl font-display text-center mb-4 text-primary uppercase tracking-wider">
-          {t('contact.title')}
-        </h2>
-        <div className="h-1 w-24 bg-primary mx-auto mb-6"></div>
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          {t('contact.subtitle')}
-        </p>
+    <section id="contact" className="min-h-screen py-20 px-4 bg-muted relative overflow-hidden">
+      {/* Background decorative image */}
+      <div 
+        className="absolute inset-0 opacity-5"
+        style={{
+          backgroundImage: 'url(https://res.cloudinary.com/dlyvsy67u/image/upload/f_webp/machu-picchu-ruinas-paisaje-natural_sqrwlx)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+      
+      {/* Decorative Chakanas */}
+      <Chakana className="absolute top-20 left-10 w-16 h-16 opacity-10" />
+      <Chakana className="absolute bottom-40 right-10 w-20 h-20 opacity-10" />
+      
+      <div className="max-w-5xl mx-auto w-full relative z-10">
+        <div className="text-center mb-12">
+          <Chakana className="mx-auto mb-4 opacity-60" />
+          <h2 className="text-4xl md:text-5xl font-display text-primary uppercase tracking-wider mb-4">
+            {t('contact.title')}
+          </h2>
+          <IncaDivider className="max-w-md mx-auto mb-6" />
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            {t('contact.subtitle')}
+          </p>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-6">
           {contacts.map((contact, index) => (
             <Card 
               key={index} 
-              className="hover:shadow-xl transition-all duration-300 animate-fade-in"
+              className="hover:shadow-xl transition-all duration-300 animate-fade-in bg-card/95 backdrop-blur-sm"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardContent className="p-6 text-center space-y-4">
-                <div className="w-20 h-20 bg-primary/10 rounded-full mx-auto flex items-center justify-center mb-4">
+                <div className="w-20 h-20 bg-primary/10 rounded-full mx-auto flex items-center justify-center mb-4 relative">
                   <span className="text-3xl font-display text-primary">
                     {contact.name.charAt(0)}
                   </span>
+                  <Chakana className="absolute -top-1 -right-1 w-5 h-5 opacity-40" />
                 </div>
                 
                 <div>
@@ -83,6 +102,8 @@ export const Contact = () => {
             </Card>
           ))}
         </div>
+        
+        <MountainSilhouette className="mt-16 opacity-30" />
       </div>
     </section>
   );

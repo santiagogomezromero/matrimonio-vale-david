@@ -3,6 +3,19 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { MapPin, ExternalLink, Phone, Mail } from 'lucide-react';
+import { IncaDivider, Chakana } from '@/components/ui/inca-patterns';
+
+// Hotel preview images
+const hotelImages: Record<string, string> = {
+  'Tierra Viva Valle Sagrado': 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&auto=format&fit=crop',
+  'Tambo del Inka': 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&auto=format&fit=crop',
+  'Casa de la Chola': 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&auto=format&fit=crop',
+  'Taypikala Deluxe Valle Sagrado': 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=600&auto=format&fit=crop',
+  'Belmond Hotel Río Sagrado': 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=600&auto=format&fit=crop',
+  'Las Casitas del Arcoiris': 'https://images.unsplash.com/photo-1596436889106-be35e843f974?w=600&auto=format&fit=crop',
+  'Lizzy Wasi Boutique Hotel': 'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600&auto=format&fit=crop',
+  'Wifala Harmony Hotel': 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&auto=format&fit=crop',
+};
 
 export const Accommodation = () => {
   const { t, language } = useLanguage();
@@ -94,12 +107,16 @@ export const Accommodation = () => {
   ];
 
   return (
-    <section id="accommodation" className="min-h-screen py-20 px-4 bg-muted">
-      <div className="max-w-7xl mx-auto">
+    <section id="accommodation" className="min-h-screen py-20 px-4 bg-muted relative overflow-hidden">
+      {/* Decorative Chakanas */}
+      <Chakana className="absolute top-20 left-10 w-16 h-16 opacity-5" />
+      <Chakana className="absolute bottom-20 right-10 w-20 h-20 opacity-5" />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <h2 className="text-4xl md:text-5xl font-display text-center mb-4 text-primary uppercase tracking-wider">
           {t('accommodation.title')}
         </h2>
-        <div className="h-1 w-24 bg-primary mx-auto mb-6"></div>
+        <IncaDivider className="max-w-md mx-auto mb-6" />
         <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-12">
           {t('accommodation.subtitle')}
         </p>
@@ -111,19 +128,33 @@ export const Accommodation = () => {
               className={`overflow-hidden hover:shadow-xl transition-all duration-300 animate-fade-in flex flex-col ${hotel.featured ? 'ring-2 ring-primary' : ''}`}
               style={{ animationDelay: `${index * 0.05}s` }}
             >
-              <CardHeader>
-                <div className="flex items-start justify-between gap-2 mb-2">
-                  <CardTitle className="text-xl font-display leading-tight">
-                    {hotel.name}
-                  </CardTitle>
-                  {hotel.badge && (
-                    <Badge variant={hotel.badge === 'wedding-discount' ? 'default' : 'secondary'} className="shrink-0">
-                      {hotel.badge === 'wedding-discount' 
-                        ? (language === 'es' ? 'Descuento' : 'Discount')
-                        : (language === 'es' ? 'Recomendado' : 'Recommended')}
-                    </Badge>
-                  )}
-                </div>
+              {/* Hotel Preview Image */}
+              <div className="aspect-[16/10] relative overflow-hidden bg-muted">
+                <img 
+                  src={hotelImages[hotel.name]} 
+                  alt={hotel.name}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.src = '/placeholder.svg';
+                  }}
+                />
+                {hotel.badge && (
+                  <Badge 
+                    variant={hotel.badge === 'wedding-discount' ? 'default' : 'secondary'} 
+                    className="absolute top-3 right-3"
+                  >
+                    {hotel.badge === 'wedding-discount' 
+                      ? (language === 'es' ? 'Descuento' : 'Discount')
+                      : (language === 'es' ? 'Recomendado' : 'Recommended')}
+                  </Badge>
+                )}
+              </div>
+              
+              <CardHeader className="pb-2">
+                <CardTitle className="text-xl font-display leading-tight">
+                  {hotel.name}
+                </CardTitle>
                 <CardDescription className="text-sm">{hotel.description}</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3 flex-1 flex flex-col">

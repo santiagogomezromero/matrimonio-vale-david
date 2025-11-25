@@ -13,7 +13,8 @@ export const Story = () => {
       icon: Heart,
       description: language === 'es' 
         ? 'Un encuentro casual que cambió nuestras vidas para siempre.' 
-        : 'A casual encounter that changed our lives forever.'
+        : 'A casual encounter that changed our lives forever.',
+      image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110322/IMG_1160_fq1o3m.jpg'
     },
     { 
       date: t('story.timeline.moved'), 
@@ -21,7 +22,8 @@ export const Story = () => {
       icon: MapPin,
       description: language === 'es'
         ? 'Decidimos comenzar nuestra aventura juntos en un nuevo país.'
-        : 'We decided to start our adventure together in a new country.'
+        : 'We decided to start our adventure together in a new country.',
+      image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110232/IMG_4636_fkzoml.jpg'
     },
     { 
       date: t('story.timeline.engaged'), 
@@ -29,7 +31,8 @@ export const Story = () => {
       icon: Sparkles,
       description: language === 'es'
         ? 'En la mágica tierra del sol naciente, sellamos nuestra promesa.'
-        : 'In the magical land of the rising sun, we sealed our promise.'
+        : 'In the magical land of the rising sun, we sealed our promise.',
+      image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110141/IMG_7219_fqs5un.jpg'
     },
     { 
       date: t('story.timeline.wedding'), 
@@ -37,7 +40,8 @@ export const Story = () => {
       icon: Calendar,
       description: language === 'es'
         ? 'El día que hemos soñado, rodeados de quienes más amamos.'
-        : 'The day we have dreamed of, surrounded by those we love most.'
+        : 'The day we have dreamed of, surrounded by those we love most.',
+      image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110246/IMG_8020_uwzc1c.jpg'
     },
   ];
 
@@ -166,7 +170,17 @@ export const Story = () => {
                     className={`flex items-center gap-4 ${isLeft ? 'flex-row' : 'flex-row-reverse'}`}
                   >
                     <div className={`w-5/12 ${isLeft ? 'text-right' : 'text-left'}`}>
-                      <Card className="inline-block bg-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                      <Card className="inline-block bg-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                        {event.image && (
+                          <div className="aspect-[16/9] overflow-hidden">
+                            <img 
+                              src={event.image} 
+                              alt={event.label}
+                              className="w-full h-full object-cover"
+                              loading="lazy"
+                            />
+                          </div>
+                        )}
                         <CardContent className="p-6">
                           <p className="font-display text-primary text-xl mb-1">{event.date}</p>
                           <p className="font-semibold text-foreground mb-2">{event.label}</p>

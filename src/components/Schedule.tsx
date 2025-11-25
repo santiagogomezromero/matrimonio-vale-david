@@ -1,6 +1,8 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar, Clock, MapPin, Shirt } from 'lucide-react';
+import { IncaDivider, Chakana } from '@/components/ui/inca-patterns';
+import logo from '@/assets/logo.png';
 
 export const Schedule = () => {
   const { t } = useLanguage();
@@ -8,15 +10,26 @@ export const Schedule = () => {
   return (
     <section id="schedule" className="min-h-screen py-20 px-4 bg-muted">
       <div className="max-w-6xl mx-auto">
+        {/* Logo */}
+        <div className="flex justify-center mb-6">
+          <img 
+            src={logo} 
+            alt="V&D" 
+            className="h-20 w-20 md:h-24 md:w-24 opacity-80"
+          />
+        </div>
+
         <h2 className="text-4xl md:text-5xl font-display text-center mb-4 text-primary uppercase tracking-wider">
           {t('schedule.title')}
         </h2>
-        <div className="h-1 w-24 bg-primary mx-auto mb-12"></div>
+        
+        <IncaDivider className="max-w-md mx-auto mb-12" />
         
         <div className="grid md:grid-cols-2 gap-8 mt-12">
           {/* Day 1 - Wedding Fest */}
           <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-fade-in">
-            <CardHeader className="bg-primary/10">
+            <CardHeader className="bg-primary/10 relative">
+              <Chakana className="absolute top-4 right-4 opacity-20 w-8 h-8" />
               <div className="flex items-center gap-3 mb-2">
                 <Calendar className="w-6 h-6 text-primary" />
                 <CardTitle className="text-2xl font-display uppercase">
@@ -70,7 +83,8 @@ export const Schedule = () => {
 
           {/* Day 2 - Lake & Traditions */}
           <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            <CardHeader className="bg-secondary/10">
+            <CardHeader className="bg-secondary/10 relative">
+              <Chakana className="absolute top-4 right-4 opacity-20 w-8 h-8" />
               <div className="flex items-center gap-3 mb-2">
                 <Calendar className="w-6 h-6 text-secondary" />
                 <CardTitle className="text-2xl font-display uppercase">
