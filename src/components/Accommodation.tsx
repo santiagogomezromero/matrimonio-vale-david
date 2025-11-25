@@ -113,24 +113,28 @@ export const Accommodation = () => {
       description: language === 'es' ? 'Villa privada con todas las comodidades.' : 'Private villa with all amenities.',
       location: 'Urubamba',
       link: 'https://www.airbnb.mx/rooms/1140113095122242296?viralityEntryPoint=1&s=76',
+      image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&auto=format&fit=crop&q=60',
     },
     {
       name: 'Cabaña Urubamba',
       description: language === 'es' ? 'Cabaña acogedora en el valle.' : 'Cozy cabin in the valley.',
       location: 'Urubamba',
       link: 'https://www.airbnb.mx/rooms/1122410686222748712?viralityEntryPoint=1&s=76',
+      image: 'https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=800&auto=format&fit=crop&q=60',
     },
     {
       name: 'Tierra Bella - Casa de Campo',
       description: language === 'es' ? 'Casa de campo con vistas espectaculares.' : 'Country house with spectacular views.',
       location: 'Urubamba',
       link: 'https://www.airbnb.mx/rooms/29076966?viralityEntryPoint=1&s=76',
+      image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&auto=format&fit=crop&q=60',
     },
     {
       name: 'Villa Tikaywasi',
       description: language === 'es' ? 'Villa tradicional con encanto local.' : 'Traditional villa with local charm.',
       location: 'Urubamba',
       link: 'https://www.airbnb.com/l/DW65nxIQ',
+      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format&fit=crop&q=60',
     },
   ];
 
@@ -264,6 +268,24 @@ export const Accommodation = () => {
                   key={index} 
                   className="overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col border-[#FF5A5F]/20 hover:border-[#FF5A5F]/40"
                 >
+                  {/* Airbnb Preview Image */}
+                  <div className="aspect-[16/10] relative overflow-hidden bg-muted">
+                    <img 
+                      src={airbnb.image} 
+                      alt={airbnb.name}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.currentTarget.src = '/placeholder.svg';
+                      }}
+                    />
+                    <Badge 
+                      className="absolute top-3 right-3 bg-[#FF5A5F] hover:bg-[#FF5A5F]/90"
+                    >
+                      Airbnb
+                    </Badge>
+                  </div>
+                  
                   <CardHeader className="pb-2">
                     <div className="flex items-start justify-between gap-2">
                       <CardTitle className="text-lg font-display leading-tight">
