@@ -113,28 +113,28 @@ export const Accommodation = () => {
       description: language === 'es' ? 'Villa privada con todas las comodidades.' : 'Private villa with all amenities.',
       location: 'Urubamba',
       link: 'https://www.airbnb.mx/rooms/1140113095122242296?viralityEntryPoint=1&s=76',
-      image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&auto=format&fit=crop&q=60',
+      image: 'https://a0.muscache.com/im/pictures/airflow/Hosting-1140113095122242296/original/6989f2d7-6ad6-411f-bc0f-1e8a5f5a665c.jpg?im_w=1200',
     },
     {
       name: 'Cabaña Urubamba',
       description: language === 'es' ? 'Cabaña acogedora en el valle.' : 'Cozy cabin in the valley.',
       location: 'Urubamba',
       link: 'https://www.airbnb.mx/rooms/1122410686222748712?viralityEntryPoint=1&s=76',
-      image: 'https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=800&auto=format&fit=crop&q=60',
+      image: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1122410686222748712/original/df8faad5-07a5-487f-8601-eed7d2a41bf2.jpeg?im_w=720',
     },
     {
       name: 'Tierra Bella - Casa de Campo',
       description: language === 'es' ? 'Casa de campo con vistas espectaculares.' : 'Country house with spectacular views.',
       location: 'Urubamba',
       link: 'https://www.airbnb.mx/rooms/29076966?viralityEntryPoint=1&s=76',
-      image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&auto=format&fit=crop&q=60',
+      image: 'https://a0.muscache.com/im/pictures/airflow/Hosting-29076966/original/57987ffa-1556-41d3-b15b-b8e0a475fc51.jpg?im_w=1200',
     },
     {
       name: 'Villa Tikaywasi',
       description: language === 'es' ? 'Villa tradicional con encanto local.' : 'Traditional villa with local charm.',
       location: 'Urubamba',
       link: 'https://www.airbnb.com/l/DW65nxIQ',
-      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format&fit=crop&q=60',
+      image: 'https://a0.muscache.com/im/pictures/ff62c626-fd2a-4dd5-bbe1-35ab5f24a75a.jpg?im_w=1200',
     },
   ];
 
