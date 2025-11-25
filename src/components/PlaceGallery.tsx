@@ -27,7 +27,7 @@ const places: Place[] = [
     category: 'cusco',
     descriptionEs: 'Impresionante complejo arqueológico inca con enormes muros de piedra perfectamente ensamblados.',
     descriptionEn: 'Impressive Inca archaeological complex with enormous perfectly assembled stone walls.',
-    image: 'https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800',
+    image: 'https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?w=600&auto=format&fit=crop',
     duration: '2-3 hrs',
     rating: 4.8,
     mapLink: 'https://maps.google.com/?q=Sacsayhuaman+Cusco'
@@ -39,7 +39,7 @@ const places: Place[] = [
     category: 'cusco',
     descriptionEs: 'El corazón histórico de Cusco, rodeada de arquitectura colonial española sobre bases incas.',
     descriptionEn: 'The historic heart of Cusco, surrounded by Spanish colonial architecture on Inca foundations.',
-    image: 'https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?w=800',
+    image: 'https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=600&auto=format&fit=crop',
     duration: '1-2 hrs',
     rating: 4.9,
     mapLink: 'https://maps.google.com/?q=Plaza+de+Armas+Cusco'
@@ -51,7 +51,7 @@ const places: Place[] = [
     category: 'valley',
     descriptionEs: 'Fortaleza inca con impresionantes terrazas y el único pueblo inca aún habitado.',
     descriptionEn: 'Inca fortress with impressive terraces and the only still-inhabited Inca town.',
-    image: 'https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=800',
+    image: 'https://images.unsplash.com/photo-1526392060635-9d6019884377?w=600&auto=format&fit=crop',
     duration: '3-4 hrs',
     rating: 4.9,
     mapLink: 'https://maps.google.com/?q=Ollantaytambo'
@@ -63,7 +63,7 @@ const places: Place[] = [
     category: 'valley',
     descriptionEs: 'Ruinas incas en la montaña y famoso mercado artesanal dominical.',
     descriptionEn: 'Mountain Inca ruins and famous Sunday artisan market.',
-    image: 'https://images.unsplash.com/photo-1531065208531-4036c0dba3ca?w=800',
+    image: 'https://images.unsplash.com/photo-1531065208531-4036c0dba3ca?w=600&auto=format&fit=crop',
     duration: '3-4 hrs',
     rating: 4.7,
     mapLink: 'https://maps.google.com/?q=Pisac+Peru'
@@ -75,7 +75,7 @@ const places: Place[] = [
     category: 'valley',
     descriptionEs: 'Terrazas circulares incas usadas como laboratorio agrícola experimental.',
     descriptionEn: 'Circular Inca terraces used as an experimental agricultural laboratory.',
-    image: 'https://images.unsplash.com/photo-1548820513-8e54f5f9d6f8?w=800',
+    image: 'https://images.unsplash.com/photo-1580875305469-b5e8a946ea74?w=600&auto=format&fit=crop',
     duration: '1-2 hrs',
     rating: 4.6,
     mapLink: 'https://maps.google.com/?q=Moray+Peru'
@@ -87,7 +87,7 @@ const places: Place[] = [
     category: 'valley',
     descriptionEs: 'Miles de pozas de sal en las laderas, explotadas desde tiempos preincaicos.',
     descriptionEn: 'Thousands of salt pools on the hillsides, exploited since pre-Inca times.',
-    image: 'https://images.unsplash.com/photo-1580292023977-e7b6a9e4e5df?w=800',
+    image: 'https://images.unsplash.com/photo-1568395108850-9ccdfb907c10?w=600&auto=format&fit=crop',
     duration: '1-2 hrs',
     rating: 4.7,
     mapLink: 'https://maps.google.com/?q=Salineras+de+Maras'
@@ -99,7 +99,7 @@ const places: Place[] = [
     category: 'beyond',
     descriptionEs: 'La ciudadela inca más famosa del mundo, una de las 7 maravillas modernas.',
     descriptionEn: 'The most famous Inca citadel in the world, one of the 7 modern wonders.',
-    image: 'https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800',
+    image: 'https://images.unsplash.com/photo-1415889455891-23bbf4e0227d?w=600&auto=format&fit=crop',
     duration: 'Full day',
     rating: 5.0,
     mapLink: 'https://maps.google.com/?q=Machu+Picchu'
@@ -111,7 +111,7 @@ const places: Place[] = [
     category: 'beyond',
     descriptionEs: 'Montaña multicolor a 5,200 metros de altura, una maravilla natural única.',
     descriptionEn: 'Multicolored mountain at 5,200 meters altitude, a unique natural wonder.',
-    image: 'https://images.unsplash.com/photo-1580968261586-46ccc1c9f0d6?w=800',
+    image: 'https://images.unsplash.com/photo-1548102268-3b4d1dd0ad50?w=600&auto=format&fit=crop',
     duration: 'Full day',
     rating: 4.8,
     mapLink: 'https://maps.google.com/?q=Rainbow+Mountain+Peru'
@@ -164,12 +164,15 @@ export const PlaceGallery = () => {
             style={{ animationDelay: `${index * 0.05}s` }}
             onClick={() => setSelectedPlace(place)}
           >
-            <div className="aspect-square relative overflow-hidden">
+            <div className="aspect-square relative overflow-hidden bg-muted">
               <img 
                 src={place.image} 
                 alt={language === 'es' ? place.nameEs : place.nameEn}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 loading="lazy"
+                onError={(e) => {
+                  e.currentTarget.src = '/placeholder.svg';
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="absolute bottom-0 left-0 right-0 p-3 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
@@ -187,11 +190,14 @@ export const PlaceGallery = () => {
         <DialogContent className="max-w-lg">
           {selectedPlace && (
             <>
-              <div className="aspect-video relative overflow-hidden rounded-lg mb-4">
+              <div className="aspect-video relative overflow-hidden rounded-lg mb-4 bg-muted">
                 <img 
                   src={selectedPlace.image} 
                   alt={language === 'es' ? selectedPlace.nameEs : selectedPlace.nameEn}
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = '/placeholder.svg';
+                  }}
                 />
               </div>
               <DialogHeader>
