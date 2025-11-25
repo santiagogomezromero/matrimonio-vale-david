@@ -2,6 +2,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { IntiSun, IncaStar } from '@/components/ui/inca-patterns';
+import { Countdown } from '@/components/Countdown';
 import logo from '@/assets/logo.png';
 
 export const Hero = () => {
@@ -81,9 +82,14 @@ export const Hero = () => {
             </div>
           </div>
           
-          <p className="font-script text-2xl md:text-3xl text-secondary mb-12 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+          <p className="font-script text-2xl md:text-3xl text-secondary mb-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
             {t('hero.subtitle')}
           </p>
+
+          {/* Countdown Timer */}
+          <div className="mb-12">
+            <Countdown />
+          </div>
 
           {/* Date Cards */}
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
