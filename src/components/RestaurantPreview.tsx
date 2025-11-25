@@ -24,7 +24,7 @@ const restaurants: Restaurant[] = [
     specialtyEn: 'Peruvian signature cuisine',
     rating: 4.8,
     priceRange: 3,
-    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600',
+    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&auto=format&fit=crop',
     mapLink: 'https://maps.google.com/?q=Tres+Keros+Urubamba',
     featured: true
   },
@@ -35,7 +35,7 @@ const restaurants: Restaurant[] = [
     specialtyEn: 'Contemporary Andean fusion',
     rating: 4.7,
     priceRange: 2,
-    image: 'https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=600',
+    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&auto=format&fit=crop',
     mapLink: 'https://maps.google.com/?q=El+Huacatay+Urubamba',
     featured: true
   },
@@ -46,7 +46,7 @@ const restaurants: Restaurant[] = [
     specialtyEn: 'Novo-Andean cuisine',
     rating: 4.6,
     priceRange: 3,
-    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600',
+    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&auto=format&fit=crop',
     mapLink: 'https://maps.google.com/?q=Wayra+Restaurant+Urubamba'
   },
   {
@@ -56,7 +56,7 @@ const restaurants: Restaurant[] = [
     specialtyEn: 'Farm to table',
     rating: 4.5,
     priceRange: 2,
-    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600',
+    image: 'https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=600&auto=format&fit=crop',
     mapLink: 'https://maps.google.com/?q=Paca+Restaurant+Urubamba'
   },
   {
@@ -66,7 +66,7 @@ const restaurants: Restaurant[] = [
     specialtyEn: 'Organic healthy cuisine',
     rating: 4.4,
     priceRange: 2,
-    image: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600',
+    image: 'https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=600&auto=format&fit=crop',
     mapLink: 'https://maps.google.com/?q=Kaia+Restaurant+Urubamba'
   },
   {
@@ -76,7 +76,7 @@ const restaurants: Restaurant[] = [
     specialtyEn: 'Traditional Cusco cuisine',
     rating: 4.3,
     priceRange: 1,
-    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600',
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&auto=format&fit=crop',
     mapLink: 'https://maps.google.com/?q=Chichas+Urubamba'
   }
 ];
@@ -117,12 +117,15 @@ export const RestaurantPreview = () => {
             }`}
             style={{ animationDelay: `${index * 0.1}s` }}
           >
-            <div className="aspect-[4/3] relative overflow-hidden">
+            <div className="aspect-[4/3] relative overflow-hidden bg-muted">
               <img 
                 src={restaurant.image} 
                 alt={restaurant.name}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
+                onError={(e) => {
+                  e.currentTarget.src = '/placeholder.svg';
+                }}
               />
               {restaurant.featured && (
                 <Badge className="absolute top-3 right-3 bg-primary">
