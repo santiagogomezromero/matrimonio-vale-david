@@ -82,7 +82,7 @@ export const Hero = () => {
             </div>
           </div>
           
-          <p className="font-script text-2xl md:text-3xl text-secondary mb-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+          <p className="font-script text-2xl md:text-3xl text-white mb-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
             {t('hero.subtitle')}
           </p>
 
