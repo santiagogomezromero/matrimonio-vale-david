@@ -2,6 +2,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { Gift, CreditCard, Smartphone } from 'lucide-react';
 import { IncaDivider, Chakana } from '@/components/ui/inca-patterns';
+import { AnimatedSection } from '@/hooks/use-scroll-animation';
 
 export const Gifts = () => {
   const { t } = useLanguage();
@@ -20,23 +21,26 @@ export const Gifts = () => {
       <Chakana className="absolute bottom-20 left-10 w-16 h-16 opacity-10" />
       
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-12">
-          <div className="flex justify-center mb-4">
-            <div className="relative">
-              <Gift className="w-16 h-16 text-primary" />
-              <Chakana className="absolute -top-2 -right-2 w-6 h-6 opacity-50" />
+        <AnimatedSection animation="fade-up">
+          <div className="text-center mb-12">
+            <div className="flex justify-center mb-4">
+              <div className="relative">
+                <Gift className="w-16 h-16 text-primary" />
+                <Chakana className="absolute -top-2 -right-2 w-6 h-6 opacity-50" />
+              </div>
             </div>
+            
+            <h2 className="text-4xl md:text-5xl font-display text-primary uppercase tracking-wider mb-4">
+              {t('gifts.title')}
+            </h2>
+            <IncaDivider className="max-w-md mx-auto" />
           </div>
-          
-          <h2 className="text-4xl md:text-5xl font-display text-primary uppercase tracking-wider mb-4">
-            {t('gifts.title')}
-          </h2>
-          <IncaDivider className="max-w-md mx-auto" />
-        </div>
+        </AnimatedSection>
 
         <div className="grid md:grid-cols-2 gap-8 items-start">
           {/* Left Column - Message */}
-          <div className="space-y-6 animate-fade-in">
+          <AnimatedSection animation="fade-left" delay={100}>
+          <div className="space-y-6">
             {/* Decorative image */}
             <div className="aspect-[16/9] rounded-xl overflow-hidden shadow-lg mb-6">
               <img 
@@ -57,9 +61,11 @@ export const Gifts = () => {
               {t('gifts.thanks')}
             </p>
           </div>
+          </AnimatedSection>
 
           {/* Right Column - Bank Details */}
-          <Card className="animate-fade-in bg-card/95 backdrop-blur-sm" style={{ animationDelay: '0.1s' }}>
+          <AnimatedSection animation="fade-right" delay={200}>
+          <Card className="bg-card/95 backdrop-blur-sm">
             <CardContent className="p-6 space-y-6">
               <div className="flex items-center justify-center gap-3">
                 <Chakana className="w-5 h-5 opacity-50" />
@@ -112,6 +118,7 @@ export const Gifts = () => {
               </div>
             </CardContent>
           </Card>
+          </AnimatedSection>
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Heart, ExternalLink } from 'lucide-react';
 import { IncaDivider, Chakana, MountainSilhouette } from '@/components/ui/inca-patterns';
+import { AnimatedSection } from '@/hooks/use-scroll-animation';
 
 export const RSVP = () => {
   const { t } = useLanguage();
@@ -25,54 +26,59 @@ export const RSVP = () => {
       
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Couple image */}
-        <div className="flex justify-center mb-8 animate-fade-in">
-          <div className="relative">
-            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl">
-              <img 
-                src="https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110243/IMG_7753_jxuijl.jpg"
-                alt="Vale & David"
-                className="w-full h-full object-cover"
-              />
+        <AnimatedSection animation="scale">
+          <div className="flex justify-center mb-8">
+            <div className="relative">
+              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl">
+                <img 
+                  src="https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110243/IMG_7753_jxuijl.jpg"
+                  alt="Vale & David"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <Heart className="absolute -bottom-2 -right-2 w-10 h-10 text-primary fill-primary/20" />
             </div>
-            <Heart className="absolute -bottom-2 -right-2 w-10 h-10 text-primary fill-primary/20" />
           </div>
-        </div>
+        </AnimatedSection>
         
-        <Chakana className="mx-auto mb-4 opacity-60 animate-fade-in" />
+        <AnimatedSection animation="fade-up" delay={100}>
+          <Chakana className="mx-auto mb-4 opacity-60" />
+          
+          <h2 className="text-4xl md:text-5xl font-display mb-4 text-primary uppercase tracking-wider">
+            {t('rsvp.title')}
+          </h2>
+          <IncaDivider className="max-w-md mx-auto mb-8" />
+        </AnimatedSection>
         
-        <h2 className="text-4xl md:text-5xl font-display mb-4 text-primary uppercase tracking-wider animate-fade-in">
-          {t('rsvp.title')}
-        </h2>
-        <IncaDivider className="max-w-md mx-auto mb-8" />
-        
-        <p className="text-lg md:text-xl text-foreground leading-relaxed mb-6 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.1s' }}>
-          {t('rsvp.description')}
-        </p>
-        
-        <p className="text-muted-foreground mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          {t('rsvp.deadline')}
-        </p>
-        
-        <Button 
-          asChild 
-          size="lg" 
-          className="text-lg px-8 py-6 animate-fade-in hover-scale shadow-lg"
-          style={{ animationDelay: '0.3s' }}
-        >
-          <a 
-            href="https://forms.gle/gcTnUFHU1rForuRt7" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="flex items-center gap-2"
+        <AnimatedSection animation="fade-up" delay={200}>
+          <p className="text-lg md:text-xl text-foreground leading-relaxed mb-6 max-w-2xl mx-auto">
+            {t('rsvp.description')}
+          </p>
+          
+          <p className="text-muted-foreground mb-8">
+            {t('rsvp.deadline')}
+          </p>
+          
+          <Button 
+            asChild 
+            size="lg" 
+            className="text-lg px-8 py-6 hover-scale shadow-lg"
           >
-            {t('rsvp.button')}
-            <ExternalLink className="w-5 h-5" />
-          </a>
-        </Button>
-        
-        <p className="text-sm text-muted-foreground mt-8 italic animate-fade-in" style={{ animationDelay: '0.4s' }}>
-          {t('rsvp.thanks')}
-        </p>
+            <a 
+              href="https://forms.gle/gcTnUFHU1rForuRt7" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              {t('rsvp.button')}
+              <ExternalLink className="w-5 h-5" />
+            </a>
+          </Button>
+          
+          <p className="text-sm text-muted-foreground mt-8 italic">
+            {t('rsvp.thanks')}
+          </p>
+        </AnimatedSection>
         
         <MountainSilhouette className="mt-16 opacity-20" />
       </div>

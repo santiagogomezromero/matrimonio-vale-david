@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { IncaDivider, IntiSun, MountainSilhouette, IncaStar } from '@/components/ui/inca-patterns';
 import { Heart, MapPin, Calendar, Sparkles, Plane } from 'lucide-react';
 import { Lightbox } from '@/components/ui/lightbox';
+import { AnimatedSection } from '@/hooks/use-scroll-animation';
 
 export const Story = () => {
   const { t, language } = useLanguage();
@@ -108,18 +109,19 @@ export const Story = () => {
       
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header with Inca elements */}
-        <div className="text-center mb-16">
+        <AnimatedSection animation="fade-up" className="text-center mb-16">
           <IntiSun className="mx-auto mb-4 w-12 h-12 opacity-60" />
           <h2 className="text-4xl md:text-5xl font-display text-primary uppercase tracking-wider mb-4">
             {t('story.title')}
           </h2>
           <IncaDivider className="max-w-md mx-auto" />
-        </div>
+        </AnimatedSection>
 
         {/* Their Stories - Side by Side */}
         <div className="grid md:grid-cols-2 gap-8 mb-20">
           {/* Vale's Story */}
-          <Card className="animate-fade-in overflow-hidden group hover:shadow-xl transition-all duration-500">
+          <AnimatedSection animation="fade-left" delay={100}>
+          <Card className="overflow-hidden group hover:shadow-xl transition-all duration-500">
             <div className="h-2 bg-gradient-to-r from-primary/60 via-primary to-primary/60" />
             <CardContent className="p-8 space-y-6">
               <div className="flex items-center gap-4 mb-6">
@@ -139,9 +141,11 @@ export const Story = () => {
               </div>
             </CardContent>
           </Card>
+          </AnimatedSection>
 
           {/* David's Story */}
-          <Card className="animate-fade-in overflow-hidden group hover:shadow-xl transition-all duration-500" style={{ animationDelay: '0.15s' }}>
+          <AnimatedSection animation="fade-right" delay={200}>
+          <Card className="overflow-hidden group hover:shadow-xl transition-all duration-500">
             <div className="h-2 bg-gradient-to-r from-secondary/60 via-secondary to-secondary/60" />
             <CardContent className="p-8 space-y-6">
               <div className="flex items-center gap-4 mb-6">
@@ -161,13 +165,15 @@ export const Story = () => {
               </div>
             </CardContent>
           </Card>
+          </AnimatedSection>
         </div>
 
         {/* Mountain divider */}
         <MountainSilhouette className="my-12" />
 
         {/* Timeline - Enhanced */}
-        <div className="mb-20 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+        <AnimatedSection animation="fade-up" delay={100}>
+        <div className="mb-20">
           <h3 className="text-2xl font-display text-center mb-12 text-primary uppercase flex items-center justify-center gap-3">
             <Heart className="w-5 h-5" />
             {t('story.timeline.title')}
@@ -222,53 +228,56 @@ export const Story = () => {
             </div>
           </div>
         </div>
+        </AnimatedSection>
 
         {/* Photo Gallery - Categorized */}
-        <div className="animate-fade-in space-y-16" style={{ animationDelay: '0.3s' }}>
-          <h3 className="text-2xl font-display text-center mb-8 text-primary uppercase">
-            {t('story.photos.title')}
-          </h3>
-          <IncaDivider className="max-w-xs mx-auto mb-12" />
-          
-          {galleryCategories.map((category, catIndex) => {
-            const CategoryIcon = category.icon;
-            const categoryImages = category.images.map(img => ({ src: img.src, alt: img.alt }));
-            return (
-              <div key={catIndex} className="space-y-6">
-                <h4 className="text-xl font-display text-center text-foreground flex items-center justify-center gap-2">
-                  <CategoryIcon className="w-5 h-5 text-primary" />
-                  {language === 'es' ? category.titleEs : category.titleEn}
-                </h4>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-                  {category.images.map((image, index) => (
-                    <div 
-                      key={index}
-                      className="group relative aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer"
-                      onClick={() => openLightbox(categoryImages, index)}
-                    >
-                      <img 
-                        src={image.src} 
-                        alt={image.alt} 
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
-                        loading="lazy"
-                        onError={(e) => {
-                          e.currentTarget.src = '/placeholder.svg';
-                        }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      {/* Zoom indicator */}
-                      <div className="absolute top-2 right-2 w-8 h-8 bg-black/50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                        </svg>
+        <AnimatedSection animation="scale" delay={150}>
+          <div className="space-y-16">
+            <h3 className="text-2xl font-display text-center mb-8 text-primary uppercase">
+              {t('story.photos.title')}
+            </h3>
+            <IncaDivider className="max-w-xs mx-auto mb-12" />
+            
+            {galleryCategories.map((category, catIndex) => {
+              const CategoryIcon = category.icon;
+              const categoryImages = category.images.map(img => ({ src: img.src, alt: img.alt }));
+              return (
+                <div key={catIndex} className="space-y-6">
+                  <h4 className="text-xl font-display text-center text-foreground flex items-center justify-center gap-2">
+                    <CategoryIcon className="w-5 h-5 text-primary" />
+                    {language === 'es' ? category.titleEs : category.titleEn}
+                  </h4>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                    {category.images.map((image, index) => (
+                      <div 
+                        key={index}
+                        className="group relative aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer"
+                        onClick={() => openLightbox(categoryImages, index)}
+                      >
+                        <img 
+                          src={image.src} 
+                          alt={image.alt} 
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                          loading="lazy"
+                          onError={(e) => {
+                            e.currentTarget.src = '/placeholder.svg';
+                          }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        {/* Zoom indicator */}
+                        <div className="absolute top-2 right-2 w-8 h-8 bg-black/50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                          </svg>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        </AnimatedSection>
       </div>
 
       {/* Lightbox */}
