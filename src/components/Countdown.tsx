@@ -54,13 +54,13 @@ export const Countdown = () => {
 
   return (
     <div className="flex flex-col items-center gap-4">
-      <div className="flex items-center gap-2 text-white/80">
+      <div className="flex items-center gap-2">
         <div className="h-px w-8 bg-white/50" />
-        <IntiSun className="w-5 h-5 text-secondary" />
+        <IntiSun className="w-5 h-5 text-amber-400" />
         <span className="text-sm uppercase tracking-widest font-medium text-white">
           {language === 'es' ? 'Cuenta regresiva' : 'Countdown'}
         </span>
-        <IntiSun className="w-5 h-5 text-secondary" />
+        <IntiSun className="w-5 h-5 text-amber-400" />
         <div className="h-px w-8 bg-white/50" />
       </div>
       
