@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
-
+import logo from '@/assets/logo.png';
 export const Header = () => {
   const { language, toggleLanguage, t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,8 +33,8 @@ export const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <img 
-              src="/lovable-uploads/e02aeceb-b5f5-4d27-ad9f-8e8dd1e0e0df.png" 
-              alt="V&D Logo" 
+              src={logo} 
+              alt="Valeria & David" 
               className="h-12 w-12"
             />
           </div>
