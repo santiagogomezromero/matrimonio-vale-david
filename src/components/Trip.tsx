@@ -2,6 +2,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Plane, Car, Bus, Phone } from 'lucide-react';
 import { IncaDivider, IntiSun, IncaStar, MamaKilla, MountainSilhouette } from '@/components/ui/inca-patterns';
+import { AnimatedSection } from '@/hooks/use-scroll-animation';
 
 export const Trip = () => {
   const { t } = useLanguage();
@@ -44,21 +45,24 @@ export const Trip = () => {
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header with celestial elements */}
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <IncaStar className="w-5 h-5 text-primary/50" />
-            <IntiSun className="w-12 h-12 opacity-60" />
-            <IncaStar className="w-5 h-5 text-primary/50" />
+        <AnimatedSection animation="fade-up">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <IncaStar className="w-5 h-5 text-primary/50" />
+              <IntiSun className="w-12 h-12 opacity-60" />
+              <IncaStar className="w-5 h-5 text-primary/50" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-display text-center mb-4 text-primary uppercase tracking-wider">
+              {t('trip.title')}
+            </h2>
+            <IncaDivider className="max-w-md mx-auto" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-display text-center mb-4 text-primary uppercase tracking-wider">
-            {t('trip.title')}
-          </h2>
-          <IncaDivider className="max-w-md mx-auto" />
-        </div>
+        </AnimatedSection>
 
         <div className="grid md:grid-cols-1 gap-8 mt-12">
           {/* Flights */}
-          <Card className="overflow-hidden animate-fade-in hover:shadow-xl transition-all duration-500 group">
+          <AnimatedSection animation="fade-left" delay={100}>
+          <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 group">
             <CardHeader className="bg-primary/5 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="flex items-center gap-3 relative z-10">
@@ -77,9 +81,11 @@ export const Trip = () => {
               </p>
             </CardContent>
           </Card>
+          </AnimatedSection>
 
           {/* Transport */}
-          <Card className="overflow-hidden animate-fade-in hover:shadow-xl transition-all duration-500 group" style={{ animationDelay: '0.1s' }}>
+          <AnimatedSection animation="fade-right" delay={200}>
+          <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 group">
             <CardHeader className="bg-primary/5 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="flex items-center gap-3 relative z-10">
@@ -128,9 +134,11 @@ export const Trip = () => {
               </p>
             </CardContent>
           </Card>
+          </AnimatedSection>
 
           {/* Shuttle */}
-          <Card className="overflow-hidden animate-fade-in hover:shadow-xl transition-all duration-500 group" style={{ animationDelay: '0.2s' }}>
+          <AnimatedSection animation="fade-up" delay={300}>
+          <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 group">
             <CardHeader className="bg-secondary/5 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="flex items-center gap-3 relative z-10">
@@ -149,6 +157,7 @@ export const Trip = () => {
               </p>
             </CardContent>
           </Card>
+          </AnimatedSection>
         </div>
 
         <MountainSilhouette className="mt-16 opacity-20" />

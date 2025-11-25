@@ -2,6 +2,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar, Clock, MapPin, Shirt } from 'lucide-react';
 import { IncaDivider, IntiSun, IncaStar, MamaKilla } from '@/components/ui/inca-patterns';
+import { AnimatedSection } from '@/hooks/use-scroll-animation';
 import logo from '@/assets/logo.png';
 
 export const Schedule = () => {
@@ -32,26 +33,29 @@ export const Schedule = () => {
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Logo */}
-        <div className="flex justify-center mb-6">
-          <div className="relative">
-            <img 
-              src={logo} 
-              alt="V&D" 
-              className="h-20 w-20 md:h-24 md:w-24 opacity-80"
-            />
-            <IncaStar className="absolute -top-2 -right-2 w-5 h-5 text-primary/60 animate-pulse-glow" />
+        <AnimatedSection animation="fade-up">
+          <div className="flex justify-center mb-6">
+            <div className="relative">
+              <img 
+                src={logo} 
+                alt="V&D" 
+                className="h-20 w-20 md:h-24 md:w-24 opacity-80"
+              />
+              <IncaStar className="absolute -top-2 -right-2 w-5 h-5 text-primary/60 animate-pulse-glow" />
+            </div>
           </div>
-        </div>
 
-        <h2 className="text-4xl md:text-5xl font-display text-center mb-4 text-primary uppercase tracking-wider">
-          {t('schedule.title')}
-        </h2>
-        
-        <IncaDivider className="max-w-md mx-auto mb-12" />
+          <h2 className="text-4xl md:text-5xl font-display text-center mb-4 text-primary uppercase tracking-wider">
+            {t('schedule.title')}
+          </h2>
+          
+          <IncaDivider className="max-w-md mx-auto mb-12" />
+        </AnimatedSection>
         
         <div className="grid md:grid-cols-2 gap-8 mt-12">
           {/* Day 1 - Wedding Fest */}
-          <Card className="overflow-hidden hover:shadow-2xl transition-all duration-500 animate-fade-in-left group">
+          <AnimatedSection animation="fade-left" delay={100}>
+          <Card className="overflow-hidden hover:shadow-2xl transition-all duration-500 group">
             <CardHeader className="bg-primary/10 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <IntiSun className="absolute top-4 right-4 opacity-20 w-10 h-10 group-hover:animate-spin-slow" />
@@ -105,9 +109,11 @@ export const Schedule = () => {
               </div>
             </CardContent>
           </Card>
+          </AnimatedSection>
 
           {/* Day 2 - Lake & Traditions */}
-          <Card className="overflow-hidden hover:shadow-2xl transition-all duration-500 animate-fade-in-right group" style={{ animationDelay: '0.15s' }}>
+          <AnimatedSection animation="fade-right" delay={200}>
+          <Card className="overflow-hidden hover:shadow-2xl transition-all duration-500 group">
             <CardHeader className="bg-secondary/10 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <MamaKilla className="absolute top-4 right-4 opacity-20 w-10 h-10 group-hover:animate-float" />
@@ -150,6 +156,7 @@ export const Schedule = () => {
               </div>
             </CardContent>
           </Card>
+          </AnimatedSection>
         </div>
       </div>
     </section>

@@ -9,6 +9,7 @@ import { IncaDivider, IntiSun, MountainSilhouette, IncaStar, MamaKilla } from '@
 import { PlaceGallery } from '@/components/PlaceGallery';
 import { RestaurantPreview } from '@/components/RestaurantPreview';
 import { HelpCircle } from 'lucide-react';
+import { AnimatedSection } from '@/hooks/use-scroll-animation';
 
 export const FAQ = () => {
   const { t } = useLanguage();
@@ -42,17 +43,19 @@ export const FAQ = () => {
       
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <IncaStar className="w-6 h-6 text-primary/60" />
-            <IntiSun className="w-14 h-14 opacity-70" />
-            <IncaStar className="w-6 h-6 text-primary/60" />
+        <AnimatedSection animation="fade-up">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <IncaStar className="w-6 h-6 text-primary/60" />
+              <IntiSun className="w-14 h-14 opacity-70" />
+              <IncaStar className="w-6 h-6 text-primary/60" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-display text-primary uppercase tracking-wider mb-4">
+              {t('faq.title')}
+            </h2>
+            <IncaDivider className="max-w-md mx-auto" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-display text-primary uppercase tracking-wider mb-4">
-            {t('faq.title')}
-          </h2>
-          <IncaDivider className="max-w-md mx-auto" />
-        </div>
+        </AnimatedSection>
 
         {/* Decorative image banner with parallax */}
         <div className="relative h-48 md:h-64 rounded-xl overflow-hidden mb-12 shadow-lg group">
