@@ -2,8 +2,9 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { MapPin, ExternalLink, Phone, Mail } from 'lucide-react';
+import { MapPin, ExternalLink, Phone, Mail, Home } from 'lucide-react';
 import { IncaDivider, IntiSun, IncaStar } from '@/components/ui/inca-patterns';
+import { AnimatedSection } from '@/hooks/use-scroll-animation';
 
 // Real hotel images from official websites
 const hotelImages: Record<string, string> = {
@@ -106,6 +107,33 @@ export const Accommodation = () => {
     },
   ];
 
+  const airbnbs = [
+    {
+      name: 'Villa Urubamba',
+      description: language === 'es' ? 'Villa privada con todas las comodidades.' : 'Private villa with all amenities.',
+      location: 'Urubamba',
+      link: 'https://www.airbnb.mx/rooms/1140113095122242296?viralityEntryPoint=1&s=76',
+    },
+    {
+      name: 'Cabaña Urubamba',
+      description: language === 'es' ? 'Cabaña acogedora en el valle.' : 'Cozy cabin in the valley.',
+      location: 'Urubamba',
+      link: 'https://www.airbnb.mx/rooms/1122410686222748712?viralityEntryPoint=1&s=76',
+    },
+    {
+      name: 'Tierra Bella - Casa de Campo',
+      description: language === 'es' ? 'Casa de campo con vistas espectaculares.' : 'Country house with spectacular views.',
+      location: 'Urubamba',
+      link: 'https://www.airbnb.mx/rooms/29076966?viralityEntryPoint=1&s=76',
+    },
+    {
+      name: 'Villa Tikaywasi',
+      description: language === 'es' ? 'Villa tradicional con encanto local.' : 'Traditional villa with local charm.',
+      location: 'Urubamba',
+      link: 'https://www.airbnb.com/l/DW65nxIQ',
+    },
+  ];
+
   return (
     <section id="accommodation" className="min-h-screen py-20 px-4 bg-muted relative overflow-hidden">
       {/* Decorative Inca elements - sun, stars */}
@@ -115,20 +143,22 @@ export const Accommodation = () => {
       <IntiSun className="absolute bottom-20 right-10 w-24 h-24 opacity-5" />
       
       <div className="max-w-7xl mx-auto relative z-10">
-        <h2 className="text-4xl md:text-5xl font-display text-center mb-4 text-primary uppercase tracking-wider">
-          {t('accommodation.title')}
-        </h2>
-        <IncaDivider className="max-w-md mx-auto mb-6" />
-        <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-12">
-          {t('accommodation.subtitle')}
-        </p>
+        <AnimatedSection animation="fade-up">
+          <h2 className="text-4xl md:text-5xl font-display text-center mb-4 text-primary uppercase tracking-wider">
+            {t('accommodation.title')}
+          </h2>
+          <IncaDivider className="max-w-md mx-auto mb-6" />
+          <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-12">
+            {t('accommodation.subtitle')}
+          </p>
+        </AnimatedSection>
 
+        <AnimatedSection animation="fade-up" delay={100}>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {hotels.map((hotel, index) => (
             <Card 
               key={index} 
-              className={`overflow-hidden hover:shadow-xl transition-all duration-300 animate-fade-in flex flex-col ${hotel.featured ? 'ring-2 ring-primary' : ''}`}
-              style={{ animationDelay: `${index * 0.05}s` }}
+              className={`overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col ${hotel.featured ? 'ring-2 ring-primary' : ''}`}
             >
               {/* Hotel Preview Image */}
               <div className="aspect-[16/10] relative overflow-hidden bg-muted">
@@ -208,6 +238,63 @@ export const Accommodation = () => {
             </Card>
           ))}
         </div>
+        </AnimatedSection>
+
+        {/* Airbnb Section */}
+        <AnimatedSection animation="fade-up" delay={200}>
+          <div className="mt-16">
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <div className="h-px flex-1 max-w-[100px] bg-gradient-to-r from-transparent to-[#FF5A5F]/40" />
+              <div className="flex items-center gap-2 px-4 py-2 bg-[#FF5A5F]/10 rounded-full">
+                <Home className="w-5 h-5 text-[#FF5A5F]" />
+                <span className="font-display text-lg text-[#FF5A5F]">Airbnb</span>
+              </div>
+              <div className="h-px flex-1 max-w-[100px] bg-gradient-to-l from-transparent to-[#FF5A5F]/40" />
+            </div>
+            
+            <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-8">
+              {language === 'es' 
+                ? 'También puedes encontrar opciones únicas en Airbnb para una experiencia más privada.'
+                : 'You can also find unique options on Airbnb for a more private experience.'}
+            </p>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {airbnbs.map((airbnb, index) => (
+                <Card 
+                  key={index} 
+                  className="overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col border-[#FF5A5F]/20 hover:border-[#FF5A5F]/40"
+                >
+                  <CardHeader className="pb-2">
+                    <div className="flex items-start justify-between gap-2">
+                      <CardTitle className="text-lg font-display leading-tight">
+                        {airbnb.name}
+                      </CardTitle>
+                      <Home className="w-5 h-5 text-[#FF5A5F] flex-shrink-0" />
+                    </div>
+                    <CardDescription className="text-sm">{airbnb.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-3 flex-1 flex flex-col">
+                    <div className="flex items-center gap-2 text-sm">
+                      <MapPin className="w-4 h-4 text-[#FF5A5F] flex-shrink-0" />
+                      <span className="text-muted-foreground">{airbnb.location}</span>
+                    </div>
+                    
+                    <Button 
+                      asChild 
+                      variant="outline" 
+                      className="w-full mt-auto border-[#FF5A5F]/30 text-[#FF5A5F] hover:bg-[#FF5A5F]/10 hover:text-[#FF5A5F]"
+                    >
+                      <a href={airbnb.link} target="_blank" rel="noopener noreferrer">
+                        {language === 'es' ? 'Ver en Airbnb' : 'View on Airbnb'}
+                        <ExternalLink className="w-4 h-4 ml-2" />
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   );
