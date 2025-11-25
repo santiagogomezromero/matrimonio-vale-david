@@ -1,7 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Chakana } from '@/components/ui/inca-patterns';
+import { IntiSun, IncaStar } from '@/components/ui/inca-patterns';
 import logo from '@/assets/logo.png';
 
 export const Hero = () => {
@@ -18,12 +18,25 @@ export const Hero = () => {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
         style={{
           backgroundImage: 'url(https://res.cloudinary.com/dlyvsy67u/image/upload/v1764103527/peak-of-machu-picchu-lit_peirp6.webp)',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/50 to-background/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background/95"></div>
+      </div>
+
+      {/* Decorative sun rays */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] opacity-10 pointer-events-none">
+        <IntiSun className="w-full h-full text-secondary animate-spin-slow" />
+      </div>
+
+      {/* Floating stars */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <IncaStar className="absolute top-[15%] left-[10%] w-4 h-4 text-secondary/30 animate-pulse" />
+        <IncaStar className="absolute top-[25%] right-[15%] w-3 h-3 text-secondary/20 animate-pulse" style={{ animationDelay: '0.5s' }} />
+        <IncaStar className="absolute top-[40%] left-[20%] w-2 h-2 text-secondary/25 animate-pulse" style={{ animationDelay: '1s' }} />
+        <IncaStar className="absolute bottom-[30%] right-[25%] w-3 h-3 text-secondary/20 animate-pulse" style={{ animationDelay: '1.5s' }} />
       </div>
 
       {/* Content */}
@@ -32,15 +45,15 @@ export const Hero = () => {
           {/* Couple Photo */}
           <div className="flex justify-center mb-8">
             <div className="relative">
-              <div className="w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-primary-foreground/30 shadow-2xl">
+              <div className="w-44 h-44 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-secondary/50 shadow-2xl ring-4 ring-secondary/20 ring-offset-4 ring-offset-transparent">
                 <img 
                   src="https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110246/IMG_8020_uwzc1c.jpg" 
                   alt="Valeria & David"
                   className="w-full h-full object-cover"
                 />
               </div>
-              {/* Decorative Chakana */}
-              <Chakana className="absolute -bottom-2 -right-2 w-10 h-10 text-secondary opacity-80" />
+              {/* Decorative Sun */}
+              <IntiSun className="absolute -bottom-3 -right-3 w-12 h-12 text-secondary drop-shadow-lg" />
             </div>
           </div>
 
@@ -53,12 +66,22 @@ export const Hero = () => {
             />
           </div>
 
-          {/* Title */}
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground mb-4 tracking-wider drop-shadow-lg">
-            {t('hero.title')}
-          </h1>
+          {/* Title - Enhanced visibility */}
+          <div className="relative mb-6">
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-2 tracking-wider 
+              drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)] 
+              [text-shadow:_0_2px_20px_rgba(0,0,0,0.8),_0_4px_40px_rgba(0,0,0,0.6)]">
+              {t('hero.title')}
+            </h1>
+            {/* Decorative line under title */}
+            <div className="flex items-center justify-center gap-3 mt-4">
+              <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent to-secondary/70" />
+              <IntiSun className="w-6 h-6 text-secondary" />
+              <div className="h-px w-16 md:w-24 bg-gradient-to-l from-transparent to-secondary/70" />
+            </div>
+          </div>
           
-          <p className="font-script text-2xl md:text-3xl text-secondary mb-12 drop-shadow-md">
+          <p className="font-script text-2xl md:text-3xl text-secondary mb-12 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
             {t('hero.subtitle')}
           </p>
 
@@ -84,7 +107,7 @@ export const Hero = () => {
           </div>
 
           {/* Intro Text */}
-          <p className="text-lg md:text-xl text-primary-foreground/90 max-w-2xl mx-auto mb-8 leading-relaxed drop-shadow-sm">
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed drop-shadow-md">
             {t('hero.intro')}
           </p>
 
@@ -111,8 +134,8 @@ export const Hero = () => {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary-foreground/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary-foreground/50 rounded-full mt-2"></div>
+        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
         </div>
       </div>
     </section>
