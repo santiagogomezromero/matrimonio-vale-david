@@ -37,18 +37,18 @@ export const Hero = () => {
           </div>
 
           {/* Title */}
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-4 tracking-wider">
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground mb-4 tracking-wider">
             {t('hero.title')}
           </h1>
           
-          <p className="font-script text-2xl md:text-3xl text-accent-light mb-12">
+          <p className="font-script text-2xl md:text-3xl text-secondary mb-12">
             {t('hero.subtitle')}
           </p>
 
           {/* Date Cards */}
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
-            <Card className="bg-background/90 backdrop-blur-sm p-6 border-accent/20">
-              <p className="font-display text-lg font-semibold text-accent mb-2">
+            <Card className="bg-card/90 backdrop-blur-sm p-6 border-border">
+              <p className="font-display text-lg font-semibold text-primary mb-2">
                 {t('hero.date1')}
               </p>
               <p className="text-sm text-muted-foreground">
@@ -56,8 +56,8 @@ export const Hero = () => {
               </p>
             </Card>
             
-            <Card className="bg-background/90 backdrop-blur-sm p-6 border-accent/20">
-              <p className="font-display text-lg font-semibold text-accent mb-2">
+            <Card className="bg-card/90 backdrop-blur-sm p-6 border-border">
+              <p className="font-display text-lg font-semibold text-primary mb-2">
                 {t('hero.date2')}
               </p>
               <p className="text-sm text-muted-foreground">
@@ -67,7 +67,7 @@ export const Hero = () => {
           </div>
 
           {/* Intro Text */}
-          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed">
+          <p className="text-lg md:text-xl text-primary-foreground/90 max-w-2xl mx-auto mb-8 leading-relaxed">
             {t('hero.intro')}
           </p>
 
@@ -76,7 +76,6 @@ export const Hero = () => {
             <Button
               size="lg"
               onClick={() => scrollToSection('#schedule')}
-              className="bg-accent hover:bg-accent/90 text-white font-medium"
             >
               {t('hero.btn.schedule')}
             </Button>
@@ -84,7 +83,7 @@ export const Hero = () => {
               size="lg"
               variant="outline"
               onClick={() => scrollToSection('#rsvp')}
-              className="bg-background/90 hover:bg-background border-accent/30 font-medium"
+              className="bg-card/90 hover:bg-card"
             >
               {t('hero.btn.rsvp')}
             </Button>
@@ -94,8 +93,8 @@ export const Hero = () => {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
+        <div className="w-6 h-10 border-2 border-primary-foreground/50 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-primary-foreground/50 rounded-full mt-2"></div>
         </div>
       </div>
     </section>
