@@ -7,6 +7,12 @@ import japan3 from '@/assets/japan-3.jpg';
 import peru1 from '@/assets/peru-1.jpg';
 import peru2 from '@/assets/peru-2.jpg';
 import peru3 from '@/assets/peru-3.jpg';
+
+export const Story = () => {
+  const { t } = useLanguage();
+
+  const timelineEvents = [
+    { date: t('story.timeline.met'), label: t('story.timeline.metLabel') },
     { date: t('story.timeline.moved'), label: t('story.timeline.movedLabel') },
     { date: t('story.timeline.engaged'), label: t('story.timeline.engagedLabel') },
     { date: t('story.timeline.wedding'), label: t('story.timeline.weddingLabel') },
