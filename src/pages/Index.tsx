@@ -8,6 +8,7 @@ import { FAQ } from '@/components/FAQ';
 import { Gifts } from '@/components/Gifts';
 import { Story } from '@/components/Story';
 import { Contact } from '@/components/Contact';
+import { Footer } from '@/components/Footer';
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
       <Gifts />
       <Story />
       <Contact />
+      <Footer />
     </div>
   );
 };
