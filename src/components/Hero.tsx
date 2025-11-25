@@ -1,7 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-
+import logo from '@/assets/logo.png';
 export const Hero = () => {
   const { t } = useLanguage();
 
@@ -30,8 +30,8 @@ export const Hero = () => {
           {/* Logo */}
           <div className="flex justify-center mb-8">
             <img 
-              src="/lovable-uploads/e02aeceb-b5f5-4d27-ad9f-8e8dd1e0e0df.png" 
-              alt="V&D Logo" 
+              src={logo} 
+              alt="Valeria & David" 
               className="h-24 w-24 md:h-32 md:w-32 drop-shadow-lg"
             />
           </div>
