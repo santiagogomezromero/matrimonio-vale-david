@@ -11,7 +11,7 @@ interface TimeLeft {
 
 export const Countdown = () => {
   const { language } = useLanguage();
-  const weddingDate = new Date('2025-09-27T12:00:00');
+  const weddingDate = new Date('2026-05-01T12:00:00');
 
   const calculateTimeLeft = (): TimeLeft => {
     const difference = weddingDate.getTime() - new Date().getTime();
@@ -54,14 +54,14 @@ export const Countdown = () => {
 
   return (
     <div className="flex flex-col items-center gap-4">
-      <div className="flex items-center gap-2 text-secondary/80">
-        <div className="h-px w-8 bg-secondary/50" />
-        <IntiSun className="w-5 h-5" />
-        <span className="text-sm uppercase tracking-widest font-medium">
+      <div className="flex items-center gap-2 text-white/80">
+        <div className="h-px w-8 bg-white/50" />
+        <IntiSun className="w-5 h-5 text-secondary" />
+        <span className="text-sm uppercase tracking-widest font-medium text-white">
           {language === 'es' ? 'Cuenta regresiva' : 'Countdown'}
         </span>
-        <IntiSun className="w-5 h-5" />
-        <div className="h-px w-8 bg-secondary/50" />
+        <IntiSun className="w-5 h-5 text-secondary" />
+        <div className="h-px w-8 bg-white/50" />
       </div>
       
       <div className="flex gap-3 md:gap-4">
