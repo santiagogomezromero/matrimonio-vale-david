@@ -3,18 +3,18 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { MapPin, ExternalLink, Phone, Mail } from 'lucide-react';
-import { IncaDivider, Chakana } from '@/components/ui/inca-patterns';
+import { IncaDivider, IntiSun, IncaStar } from '@/components/ui/inca-patterns';
 
-// Hotel preview images
+// Real hotel images from their websites
 const hotelImages: Record<string, string> = {
-  'Tierra Viva Valle Sagrado': 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&auto=format&fit=crop',
-  'Tambo del Inka': 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&auto=format&fit=crop',
-  'Casa de la Chola': 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&auto=format&fit=crop',
-  'Taypikala Deluxe Valle Sagrado': 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=600&auto=format&fit=crop',
-  'Belmond Hotel Río Sagrado': 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=600&auto=format&fit=crop',
-  'Las Casitas del Arcoiris': 'https://images.unsplash.com/photo-1596436889106-be35e843f974?w=600&auto=format&fit=crop',
-  'Lizzy Wasi Boutique Hotel': 'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600&auto=format&fit=crop',
-  'Wifala Harmony Hotel': 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&auto=format&fit=crop',
+  'Tierra Viva Valle Sagrado': 'https://tierravivahoteles.com/wp-content/uploads/2023/03/tierra-viva-urubamba-pool-aerial-view.jpg',
+  'Tambo del Inka': 'https://cache.marriott.com/is/image/marriotts7prod/lc-cussi-exterior-50702:Wide-Hor?wid=1336&fit=constrain',
+  'Casa de la Chola': 'https://images.trvl-media.com/lodging/25000000/24490000/24481900/24481862/51c3d327.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill',
+  'Taypikala Deluxe Valle Sagrado': 'https://www.taypikala.com/wp-content/uploads/2023/05/hotel-taypikala-urubamba-exterior.jpg',
+  'Belmond Hotel Río Sagrado': 'https://www.belmond.com/uploads/2019/10/05/original_belmond-hotel-rio-sagrado-exterior.jpg',
+  'Las Casitas del Arcoiris': 'https://lascasitasdelarcoiris.com/wp-content/uploads/2023/casitas-arcoiris-urubamba.jpg',
+  'Lizzy Wasi Boutique Hotel': 'https://lizzywasi.com/wp-content/uploads/2022/lizzy-wasi-hotel-urubamba.jpg',
+  'Wifala Harmony Hotel': 'https://www.wifalaharmonyhotel.com/wp-content/uploads/wifala-harmony-hotel-exterior.jpg',
 };
 
 export const Accommodation = () => {
@@ -108,9 +108,11 @@ export const Accommodation = () => {
 
   return (
     <section id="accommodation" className="min-h-screen py-20 px-4 bg-muted relative overflow-hidden">
-      {/* Decorative Chakanas */}
-      <Chakana className="absolute top-20 left-10 w-16 h-16 opacity-5" />
-      <Chakana className="absolute bottom-20 right-10 w-20 h-20 opacity-5" />
+      {/* Decorative Inca elements - sun, stars */}
+      <IntiSun className="absolute top-20 left-10 w-20 h-20 opacity-5" />
+      <IncaStar className="absolute top-40 right-20 w-8 h-8 opacity-10" />
+      <IncaStar className="absolute bottom-40 left-20 w-6 h-6 opacity-10" />
+      <IntiSun className="absolute bottom-20 right-10 w-24 h-24 opacity-5" />
       
       <div className="max-w-7xl mx-auto relative z-10">
         <h2 className="text-4xl md:text-5xl font-display text-center mb-4 text-primary uppercase tracking-wider">

@@ -1,10 +1,21 @@
+import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
-import { IncaDivider, Chakana, MountainSilhouette } from '@/components/ui/inca-patterns';
+import { IncaDivider, IntiSun, MountainSilhouette, IncaStar } from '@/components/ui/inca-patterns';
 import { Heart, MapPin, Calendar, Sparkles, Plane } from 'lucide-react';
+import { Lightbox } from '@/components/ui/lightbox';
 
 export const Story = () => {
   const { t, language } = useLanguage();
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxImages, setLightboxImages] = useState<{ src: string; alt: string }[]>([]);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const openLightbox = (images: { src: string; alt: string }[], index: number) => {
+    setLightboxImages(images);
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
 
   const timelineEvents = [
     { 
@@ -86,11 +97,19 @@ export const Story = () => {
   ];
 
   return (
-    <section id="story" className="min-h-screen py-20 px-4 bg-gradient-to-b from-background via-muted/20 to-background">
-      <div className="max-w-6xl mx-auto">
+    <section id="story" className="min-h-screen py-20 px-4 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
+      {/* Parallax background elements */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <IntiSun className="absolute -top-20 -right-20 w-64 h-64 text-primary/5 animate-spin-slow" />
+        <IncaStar className="absolute top-1/4 left-[5%] w-6 h-6 text-primary/10 animate-pulse-glow" />
+        <IncaStar className="absolute top-1/3 right-[10%] w-4 h-4 text-primary/10 animate-pulse-glow" style={{ animationDelay: '1s' }} />
+        <IncaStar className="absolute bottom-1/4 left-[15%] w-5 h-5 text-primary/10 animate-pulse-glow" style={{ animationDelay: '0.5s' }} />
+      </div>
+      
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Header with Inca elements */}
         <div className="text-center mb-16">
-          <Chakana className="mx-auto mb-4 opacity-60" />
+          <IntiSun className="mx-auto mb-4 w-12 h-12 opacity-60" />
           <h2 className="text-4xl md:text-5xl font-display text-primary uppercase tracking-wider mb-4">
             {t('story.title')}
           </h2>
@@ -213,6 +232,7 @@ export const Story = () => {
           
           {galleryCategories.map((category, catIndex) => {
             const CategoryIcon = category.icon;
+            const categoryImages = category.images.map(img => ({ src: img.src, alt: img.alt }));
             return (
               <div key={catIndex} className="space-y-6">
                 <h4 className="text-xl font-display text-center text-foreground flex items-center justify-center gap-2">
@@ -223,7 +243,8 @@ export const Story = () => {
                   {category.images.map((image, index) => (
                     <div 
                       key={index}
-                      className="group relative aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500"
+                      className="group relative aspect-square rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer"
+                      onClick={() => openLightbox(categoryImages, index)}
                     >
                       <img 
                         src={image.src} 
@@ -235,6 +256,12 @@ export const Story = () => {
                         }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      {/* Zoom indicator */}
+                      <div className="absolute top-2 right-2 w-8 h-8 bg-black/50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                        </svg>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -243,6 +270,14 @@ export const Story = () => {
           })}
         </div>
       </div>
+
+      {/* Lightbox */}
+      <Lightbox 
+        images={lightboxImages}
+        initialIndex={lightboxIndex}
+        open={lightboxOpen}
+        onOpenChange={setLightboxOpen}
+      />
     </section>
   );
 };

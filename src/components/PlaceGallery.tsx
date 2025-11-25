@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Badge } from '@/components/ui/badge';
 import { MapPin, Clock, Star, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Lightbox } from '@/components/ui/lightbox';
 
 interface Place {
   id: string;
@@ -63,7 +64,7 @@ const places: Place[] = [
     category: 'valley',
     descriptionEs: 'Fortaleza inca con impresionantes terrazas y el único pueblo inca aún habitado.',
     descriptionEn: 'Inca fortress with impressive terraces and the only still-inhabited Inca town.',
-    image: 'https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1580753090942-b32c75282b6f?w=800&auto=format&fit=crop',
     duration: '3-4 hrs',
     rating: 4.9,
     mapLink: 'https://maps.google.com/?q=Ollantaytambo'
@@ -75,7 +76,7 @@ const places: Place[] = [
     category: 'valley',
     descriptionEs: 'Ruinas incas en la montaña y famoso mercado artesanal dominical.',
     descriptionEn: 'Mountain Inca ruins and famous Sunday artisan market.',
-    image: 'https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=800&auto=format&fit=crop',
     duration: '3-4 hrs',
     rating: 4.7,
     mapLink: 'https://maps.google.com/?q=Pisac+Peru'
@@ -87,7 +88,7 @@ const places: Place[] = [
     category: 'valley',
     descriptionEs: 'Terrazas circulares incas usadas como laboratorio agrícola experimental.',
     descriptionEn: 'Circular Inca terraces used as an experimental agricultural laboratory.',
-    image: 'https://images.unsplash.com/photo-1531065208531-4036c0dba3ca?w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800&auto=format&fit=crop',
     duration: '1-2 hrs',
     rating: 4.6,
     mapLink: 'https://maps.google.com/?q=Moray+Peru'
@@ -99,7 +100,7 @@ const places: Place[] = [
     category: 'valley',
     descriptionEs: 'Miles de pozas de sal en las laderas, explotadas desde tiempos preincaicos.',
     descriptionEn: 'Thousands of salt pools on the hillsides, exploited since pre-Inca times.',
-    image: 'https://images.unsplash.com/photo-1580974852861-c381510bc98a?w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1531968455001-5c5272a41129?w=800&auto=format&fit=crop',
     duration: '1-2 hrs',
     rating: 4.7,
     mapLink: 'https://maps.google.com/?q=Salineras+de+Maras'
@@ -123,7 +124,7 @@ const places: Place[] = [
     category: 'beyond',
     descriptionEs: 'Montaña multicolor a 5,200 metros de altura, una maravilla natural única.',
     descriptionEn: 'Multicolored mountain at 5,200 meters altitude, a unique natural wonder.',
-    image: 'https://images.unsplash.com/photo-1580968614968-19dc85a9f85e?w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1526392060635-9d6019884377?w=800&auto=format&fit=crop&q=80',
     duration: 'Full day',
     rating: 4.8,
     mapLink: 'https://maps.google.com/?q=Rainbow+Mountain+Peru'
@@ -134,6 +135,8 @@ export const PlaceGallery = () => {
   const { language, t } = useLanguage();
   const [selectedPlace, setSelectedPlace] = useState<Place | null>(null);
   const [activeCategory, setActiveCategory] = useState<'all' | 'cusco' | 'valley' | 'beyond'>('all');
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   const categories = [
     { id: 'all', labelEs: 'Todos', labelEn: 'All' },
@@ -145,6 +148,17 @@ export const PlaceGallery = () => {
   const filteredPlaces = activeCategory === 'all' 
     ? places 
     : places.filter(p => p.category === activeCategory);
+
+  const lightboxImages = filteredPlaces.map(p => ({
+    src: p.image,
+    alt: language === 'es' ? p.nameEs : p.nameEn,
+    caption: language === 'es' ? p.nameEs : p.nameEn
+  }));
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
 
   return (
     <section className="py-12">
@@ -192,10 +206,30 @@ export const PlaceGallery = () => {
                   {language === 'es' ? place.nameEs : place.nameEn}
                 </p>
               </div>
+              {/* Lightbox button */}
+              <button
+                className="absolute top-2 right-2 w-8 h-8 bg-black/50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-black/70"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  openLightbox(index);
+                }}
+              >
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                </svg>
+              </button>
             </div>
           </Card>
         ))}
       </div>
+
+      {/* Lightbox */}
+      <Lightbox 
+        images={lightboxImages}
+        initialIndex={lightboxIndex}
+        open={lightboxOpen}
+        onOpenChange={setLightboxOpen}
+      />
 
       {/* Detail modal */}
       <Dialog open={!!selectedPlace} onOpenChange={() => setSelectedPlace(null)}>
