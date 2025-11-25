@@ -27,7 +27,7 @@ const places: Place[] = [
     category: 'cusco',
     descriptionEs: 'Impresionante complejo arqueológico inca con enormes muros de piedra perfectamente ensamblados.',
     descriptionEn: 'Impressive Inca archaeological complex with enormous perfectly assembled stone walls.',
-    image: 'https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?w=600&auto=format&fit=crop',
+    image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/f_webp/ruinas-de-saqsaywaman-cusco_rm66q5',
     duration: '2-3 hrs',
     rating: 4.8,
     mapLink: 'https://maps.google.com/?q=Sacsayhuaman+Cusco'
@@ -39,10 +39,22 @@ const places: Place[] = [
     category: 'cusco',
     descriptionEs: 'El corazón histórico de Cusco, rodeada de arquitectura colonial española sobre bases incas.',
     descriptionEn: 'The historic heart of Cusco, surrounded by Spanish colonial architecture on Inca foundations.',
-    image: 'https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=600&auto=format&fit=crop',
+    image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/f_webp/plaza-armas-cusco_av5a4e',
     duration: '1-2 hrs',
     rating: 4.9,
     mapLink: 'https://maps.google.com/?q=Plaza+de+Armas+Cusco'
+  },
+  {
+    id: 'san-blas',
+    nameEs: 'Barrio de San Blas',
+    nameEn: 'San Blas Neighborhood',
+    category: 'cusco',
+    descriptionEs: 'El barrio de artesanos más pintoresco de Cusco, con calles empedradas y talleres tradicionales.',
+    descriptionEn: 'The most picturesque artisan neighborhood in Cusco, with cobblestone streets and traditional workshops.',
+    image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/f_webp/san_blas_portada_fvwoyf',
+    duration: '2-3 hrs',
+    rating: 4.7,
+    mapLink: 'https://maps.google.com/?q=San+Blas+Cusco'
   },
   {
     id: 'ollantaytambo',
@@ -51,7 +63,7 @@ const places: Place[] = [
     category: 'valley',
     descriptionEs: 'Fortaleza inca con impresionantes terrazas y el único pueblo inca aún habitado.',
     descriptionEn: 'Inca fortress with impressive terraces and the only still-inhabited Inca town.',
-    image: 'https://images.unsplash.com/photo-1526392060635-9d6019884377?w=600&auto=format&fit=crop',
+    image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/f_webp/San_Blas_antiguo_gxzega',
     duration: '3-4 hrs',
     rating: 4.9,
     mapLink: 'https://maps.google.com/?q=Ollantaytambo'
@@ -63,7 +75,7 @@ const places: Place[] = [
     category: 'valley',
     descriptionEs: 'Ruinas incas en la montaña y famoso mercado artesanal dominical.',
     descriptionEn: 'Mountain Inca ruins and famous Sunday artisan market.',
-    image: 'https://images.unsplash.com/photo-1531065208531-4036c0dba3ca?w=600&auto=format&fit=crop',
+    image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/f_webp/YL6XPN6O5JG6TJL7FAJJ7WYVNY_fa9fzx',
     duration: '3-4 hrs',
     rating: 4.7,
     mapLink: 'https://maps.google.com/?q=Pisac+Peru'
@@ -75,7 +87,7 @@ const places: Place[] = [
     category: 'valley',
     descriptionEs: 'Terrazas circulares incas usadas como laboratorio agrícola experimental.',
     descriptionEn: 'Circular Inca terraces used as an experimental agricultural laboratory.',
-    image: 'https://images.unsplash.com/photo-1580875305469-b5e8a946ea74?w=600&auto=format&fit=crop',
+    image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/f_webp/machu-picchu-ruinas-naturaleza-llamas_etvodn',
     duration: '1-2 hrs',
     rating: 4.6,
     mapLink: 'https://maps.google.com/?q=Moray+Peru'
@@ -87,7 +99,7 @@ const places: Place[] = [
     category: 'valley',
     descriptionEs: 'Miles de pozas de sal en las laderas, explotadas desde tiempos preincaicos.',
     descriptionEn: 'Thousands of salt pools on the hillsides, exploited since pre-Inca times.',
-    image: 'https://images.unsplash.com/photo-1568395108850-9ccdfb907c10?w=600&auto=format&fit=crop',
+    image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/f_webp/san_blas_portada_fvwoyf',
     duration: '1-2 hrs',
     rating: 4.7,
     mapLink: 'https://maps.google.com/?q=Salineras+de+Maras'
@@ -99,7 +111,7 @@ const places: Place[] = [
     category: 'beyond',
     descriptionEs: 'La ciudadela inca más famosa del mundo, una de las 7 maravillas modernas.',
     descriptionEn: 'The most famous Inca citadel in the world, one of the 7 modern wonders.',
-    image: 'https://images.unsplash.com/photo-1415889455891-23bbf4e0227d?w=600&auto=format&fit=crop',
+    image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/f_webp/machu-picchu-ruinas-paisaje-natural_sqrwlx',
     duration: 'Full day',
     rating: 5.0,
     mapLink: 'https://maps.google.com/?q=Machu+Picchu'
@@ -111,7 +123,7 @@ const places: Place[] = [
     category: 'beyond',
     descriptionEs: 'Montaña multicolor a 5,200 metros de altura, una maravilla natural única.',
     descriptionEn: 'Multicolored mountain at 5,200 meters altitude, a unique natural wonder.',
-    image: 'https://images.unsplash.com/photo-1548102268-3b4d1dd0ad50?w=600&auto=format&fit=crop',
+    image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/f_webp/ruinas-de-saqsaywaman-cusco_rm66q5',
     duration: 'Full day',
     rating: 4.8,
     mapLink: 'https://maps.google.com/?q=Rainbow+Mountain+Peru'
