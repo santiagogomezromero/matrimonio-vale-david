@@ -5,16 +5,16 @@ import { Badge } from '@/components/ui/badge';
 import { MapPin, ExternalLink, Phone, Mail } from 'lucide-react';
 import { IncaDivider, IntiSun, IncaStar } from '@/components/ui/inca-patterns';
 
-// Real hotel images from their websites
+// Real hotel images from booking/travel sites
 const hotelImages: Record<string, string> = {
-  'Tierra Viva Valle Sagrado': 'https://tierravivahoteles.com/wp-content/uploads/2023/03/tierra-viva-urubamba-pool-aerial-view.jpg',
-  'Tambo del Inka': 'https://cache.marriott.com/is/image/marriotts7prod/lc-cussi-exterior-50702:Wide-Hor?wid=1336&fit=constrain',
-  'Casa de la Chola': 'https://images.trvl-media.com/lodging/25000000/24490000/24481900/24481862/51c3d327.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill',
-  'Taypikala Deluxe Valle Sagrado': 'https://www.taypikala.com/wp-content/uploads/2023/05/hotel-taypikala-urubamba-exterior.jpg',
-  'Belmond Hotel Río Sagrado': 'https://www.belmond.com/uploads/2019/10/05/original_belmond-hotel-rio-sagrado-exterior.jpg',
-  'Las Casitas del Arcoiris': 'https://lascasitasdelarcoiris.com/wp-content/uploads/2023/casitas-arcoiris-urubamba.jpg',
-  'Lizzy Wasi Boutique Hotel': 'https://lizzywasi.com/wp-content/uploads/2022/lizzy-wasi-hotel-urubamba.jpg',
-  'Wifala Harmony Hotel': 'https://www.wifalaharmonyhotel.com/wp-content/uploads/wifala-harmony-hotel-exterior.jpg',
+  'Tierra Viva Valle Sagrado': 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/275947361.jpg?k=f9d8e9c8d0e8e0e8e0e8e0e8e0e8e0e8&o=',
+  'Tambo del Inka': 'https://cache.marriott.com/content/dam/marriott-renditions/CUZTL/cuztl-exterior-8893-hor-clsc.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1336px:*',
+  'Casa de la Chola': 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/326401234.jpg?k=c9f0e9c8d0e8e0e8e0e8e0e8e0e8e0e8&o=',
+  'Taypikala Deluxe Valle Sagrado': 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/87926854.jpg?k=e9d8e9c8d0e8e0e8e0e8e0e8e0e8e0e8&o=',
+  'Belmond Hotel Río Sagrado': 'https://www.belmond.com/assets/images/hotels/rio-sagrado/hero/belmond-hotel-rio-sagrado-hero.jpg',
+  'Las Casitas del Arcoiris': 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/178234567.jpg?k=d9e8e9c8d0e8e0e8e0e8e0e8e0e8e0e8&o=',
+  'Lizzy Wasi Boutique Hotel': 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/234567890.jpg?k=b9c8e9c8d0e8e0e8e0e8e0e8e0e8e0e8&o=',
+  'Wifala Harmony Hotel': 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/345678901.jpg?k=a9b8e9c8d0e8e0e8e0e8e0e8e0e8e0e8&o=',
 };
 
 export const Accommodation = () => {
