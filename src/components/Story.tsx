@@ -120,19 +120,6 @@ export const Story = () => {
 
   const galleryCategories = [
     {
-      titleEs: 'La Propuesta en Japón',
-      titleEn: 'The Proposal in Japan',
-      icon: Heart,
-      images: [
-        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/f_webp/IMG_7351_2_wt2gyz', alt: 'Japan Trip', location: 'Japan' },
-        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110141/IMG_7219_fqs5un.jpg', alt: 'Proposal', location: 'Japan' },
-        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110141/IMG_7170_me7goa.jpg', alt: 'Proposal', location: 'Japan' },
-        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110140/IMG_7205_jwjseo.jpg', alt: 'Proposal', location: 'Japan' },
-        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110141/IMG_7223_npq7ph.jpg', alt: 'Proposal', location: 'Japan' },
-        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110140/IMG_7196_wni8xp.jpg', alt: 'Proposal', location: 'Japan' },
-      ]
-    },
-    {
       titleEs: 'Nuestra Vida en Perú',
       titleEn: 'Our Life in Peru',
       icon: Heart,
