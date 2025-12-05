@@ -150,9 +150,13 @@ export const PlaceGallery = () => {
 
   return (
     <section className="py-12">
-      <h3 className="text-2xl font-display text-center mb-6 text-primary uppercase tracking-wider">
+      <h3 className="text-2xl font-display text-center mb-4 text-primary uppercase tracking-wider">
         {language === 'es' ? 'Lugares para Visitar' : 'Places to Visit'}
       </h3>
+      
+      <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-8 text-sm">
+        {t('faq.places.subtitle')}
+      </p>
 
       {/* Category filters */}
       <div className="flex flex-wrap justify-center gap-2 mb-8">

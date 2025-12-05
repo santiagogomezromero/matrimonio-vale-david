@@ -55,8 +55,8 @@ export const RSVP = () => {
             {t('rsvp.description')}
           </p>
           
-          <p className="text-muted-foreground mb-8">
-            {t('rsvp.deadline')}
+          <p className="text-foreground mb-6 max-w-2xl mx-auto">
+            {t('rsvp.intro')}
           </p>
           
           <Button 
