@@ -1,12 +1,13 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Calendar, Clock, MapPin, Shirt } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Calendar, Clock, MapPin, Shirt, ExternalLink } from 'lucide-react';
 import { IncaDivider, IntiSun, IncaStar, MamaKilla } from '@/components/ui/inca-patterns';
 import { AnimatedSection } from '@/hooks/use-scroll-animation';
 import logo from '@/assets/logo.png';
 
 export const Schedule = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <section id="schedule" className="min-h-screen py-20 px-4 bg-muted relative overflow-hidden">
@@ -49,7 +50,14 @@ export const Schedule = () => {
             {t('schedule.title')}
           </h2>
           
-          <IncaDivider className="max-w-md mx-auto mb-12" />
+          <IncaDivider className="max-w-md mx-auto mb-8" />
+          
+          {/* Intro text */}
+          <p className="text-center text-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
+            {language === 'es' 
+              ? 'Serán 2 días de celebraciones, baile, comida rica, tradición y diversión. No será una boda típica, serán dos encuentros casuales donde disfrutaremos con nuestras personas más importantes, entre ellas tú.'
+              : 'It will be 2 days of celebrations, dancing, delicious food, tradition and fun. It won\'t be a typical wedding, but two casual gatherings where we\'ll enjoy with our most important people, including you.'}
+          </p>
         </AnimatedSection>
         
         <div className="grid md:grid-cols-2 gap-8 mt-12">
@@ -61,7 +69,7 @@ export const Schedule = () => {
               <IntiSun className="absolute top-4 right-4 opacity-20 w-10 h-10 group-hover:animate-spin-slow" />
               <div className="flex items-center gap-3 mb-2 relative z-10">
                 <Calendar className="w-6 h-6 text-primary" />
-                <CardTitle className="text-2xl font-display uppercase">
+                <CardTitle className="text-2xl font-display">
                   {t('schedule.day1.date')}
                 </CardTitle>
               </div>
@@ -107,6 +115,24 @@ export const Schedule = () => {
                   </p>
                 </div>
               </div>
+              
+              {/* Map button */}
+              <Button 
+                asChild 
+                variant="outline" 
+                size="sm"
+                className="w-full mt-4"
+              >
+                <a 
+                  href="https://maps.app.goo.gl/jYtFVruzQPhtXuT17" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <MapPin className="w-4 h-4 mr-2" />
+                  {language === 'es' ? 'Ver mapa' : 'View map'}
+                  <ExternalLink className="w-3 h-3 ml-2" />
+                </a>
+              </Button>
             </CardContent>
           </Card>
           </AnimatedSection>
@@ -119,7 +145,7 @@ export const Schedule = () => {
               <MamaKilla className="absolute top-4 right-4 opacity-20 w-10 h-10 group-hover:animate-float" />
               <div className="flex items-center gap-3 mb-2 relative z-10">
                 <Calendar className="w-6 h-6 text-secondary" />
-                <CardTitle className="text-2xl font-display uppercase">
+                <CardTitle className="text-2xl font-display">
                   {t('schedule.day2.date')}
                 </CardTitle>
               </div>
@@ -154,6 +180,24 @@ export const Schedule = () => {
                   </p>
                 </div>
               </div>
+              
+              {/* Map button */}
+              <Button 
+                asChild 
+                variant="outline" 
+                size="sm"
+                className="w-full mt-4"
+              >
+                <a 
+                  href="https://maps.app.goo.gl/B2KApJNHSqBcB9zr5" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <MapPin className="w-4 h-4 mr-2" />
+                  {language === 'es' ? 'Ver mapa' : 'View map'}
+                  <ExternalLink className="w-3 h-3 ml-2" />
+                </a>
+              </Button>
             </CardContent>
           </Card>
           </AnimatedSection>

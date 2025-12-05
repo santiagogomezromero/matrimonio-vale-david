@@ -23,15 +23,15 @@ const translations = {
     'nav.contact': 'Contacto',
     
     // Hero
-    'hero.title': 'VALERIA & DAVID',
+    'hero.title': 'Valeria & David',
     'hero.subtitle': 'Nuestra boda',
-    'hero.date1': '1 de mayo – Wedding Fest',
+    'hero.date1': 'Wedding Fest – 1 de mayo',
     'hero.location1': 'Pachar, Ollantaytambo, Cusco',
-    'hero.date2': '2 de mayo – Laguna y tradición',
-    'hero.location2': 'Laguna Piuray, Chinchero, Cusco',
-    'hero.intro': 'Nos casamos en el Valle Sagrado de los Incas, rodeados de montañas, historia y naturaleza. Queremos compartir este momento especial contigo.',
+    'hero.date2': 'Laguna y Tradición – 2 de mayo',
+    'hero.location2': 'Playa La Sirena, Laguna Piuray, Chinchero, Cusco',
+    'hero.intro': 'Nos casamos en el Valle Sagrado de los Incas en Cusco. El lugar donde nos conocimos y donde seguimos echando raíces.',
     'hero.btn.schedule': 'Ver Agenda',
-    'hero.btn.rsvp': 'Confirmar asistencia',
+    'hero.btn.rsvp': 'Asistencia',
 
     // Schedule
     'schedule.title': 'Agenda',
@@ -43,7 +43,7 @@ const translations = {
     'schedule.day1.dress.code': 'Casual, blanco, beige y colores tierra',
     'schedule.day1.dress.reference': 'Ver referencias de Pinterest',
     'schedule.day1.location.title': '¿Dónde?',
-    'schedule.day1.location.address': 'Cervecería del Valle Sagrado - Taproom Pachar, Paradero Puente Pachar, Pachar, Peru',
+    'schedule.day1.location.address': 'Cervecería del Valle Sagrado - Taproom Pachar',
     'schedule.day1.location.note': 'Importante: esta sede de la Cervecería está en Ollantaytambo a 20 minutos de Urubamba.',
     'schedule.day2.date': 'Sábado, 2 de mayo 2026',
     'schedule.day2.time': '11:00 a.m.',
@@ -52,7 +52,7 @@ const translations = {
     'schedule.day2.dress.title': 'Código de vestimenta',
     'schedule.day2.dress.code': 'Sport Casual (ir abrigados)',
     'schedule.day2.location.title': '¿Dónde?',
-    'schedule.day2.location.address': 'Laguna Piuray, Chinchero, Cusco',
+    'schedule.day2.location.address': 'Playa La Sirena, Laguna Piuray, Chinchero, Cusco',
 
     // Trip
     'trip.title': 'El viaje',
@@ -67,11 +67,11 @@ const translations = {
 
     // Accommodation
     'accommodation.title': 'Hospedaje',
-    'accommodation.subtitle': 'Nuestra organizadora de bodas nos ha ayudado a investigar buenas opciones de alojamiento en Urubamba y sus alrededores.',
+    'accommodation.subtitle': 'Nuestra organizadora de bodas, Diana, nos ha ayudado a investigar buenas opciones de alojamiento en Urubamba y sus alrededores, y es donde recomendamos hospedarse. Nota: Mayo es temporada alta por lo que les recomendamos reservar con anticipación.',
     'accommodation.visit': 'Ver sitio web',
     'accommodation.tierraviva.description': 'Cadena confiable; buena relación calidad-precio.',
     'accommodation.tierraviva.location': 'Urubamba – 7 min de la cervecería',
-    'accommodation.tierraviva.notes': 'Usa el código promocional "BODA-V&D" para tarifas especiales. (Ciudadanos peruanos: +18% IGV a pagar en el hotel)',
+    'accommodation.tierraviva.notes': 'Usa el código promocional "BODA-V&D" en la web para tarifas especiales. (Ciudadanos peruanos: +18% IGV a pagar en el hotel)',
     'accommodation.tambo.description': 'Resort de lujo cerca del centro de Urubamba.',
     'accommodation.tambo.location': 'Urubamba centro',
     'accommodation.tambo.notes': '50% de descuento. Para reservar, completa el formulario y envía a corporativo@intursa.com.pe',
@@ -79,7 +79,7 @@ const translations = {
     // RSVP
     'rsvp.title': 'Confirma tu asistencia',
     'rsvp.description': 'Si estás aquí es porque significas mucho para nosotros y deseamos que seas parte de nuestra unión. Tu confirmación nos ayuda a organizar todo con calma y amor.',
-    'rsvp.deadline': 'Por favor confirma tu asistencia antes del 1 de marzo de 2026.',
+    'rsvp.deadline': 'Por favor confirma tu asistencia antes del 1 de febrero de 2026.',
     'rsvp.button': 'Ir al formulario de asistencia',
     'rsvp.thanks': 'Gracias por tomarte el tiempo de confirmar. ¡Nos emociona celebrar contigo!',
 
@@ -130,7 +130,7 @@ const translations = {
     'story.timeline.metLabel': 'Nos conocemos en Cusco',
     'story.timeline.moved': 'Agosto 2023',
     'story.timeline.movedLabel': 'Empezamos a convivir',
-    'story.timeline.engaged': 'Octubre 2024',
+    'story.timeline.engaged': 'Mayo 2025',
     'story.timeline.engagedLabel': 'Pedida en Japón',
     'story.timeline.wedding': 'Mayo 2026',
     'story.timeline.weddingLabel': '¡Nos casamos!',
@@ -155,13 +155,13 @@ const translations = {
     'nav.contact': 'Contact',
     
     // Hero
-    'hero.title': 'VALERIA & DAVID',
+    'hero.title': 'Valeria & David',
     'hero.subtitle': 'Our Wedding',
-    'hero.date1': 'May 1st – Wedding Fest',
+    'hero.date1': 'Wedding Fest – May 1st',
     'hero.location1': 'Pachar, Ollantaytambo, Cusco',
-    'hero.date2': 'May 2nd – Lake & Traditions',
-    'hero.location2': 'Laguna Piuray, Chinchero, Cusco',
-    'hero.intro': 'We are getting married in the Sacred Valley of the Incas, surrounded by mountains, history and nature. We want to share this special moment with you.',
+    'hero.date2': 'Lake & Tradition – May 2nd',
+    'hero.location2': 'Playa La Sirena, Laguna Piuray, Chinchero, Cusco',
+    'hero.intro': 'We are getting married in the Sacred Valley of the Incas in Cusco. The place where we met and where we continue to put down roots.',
     'hero.btn.schedule': 'View Schedule',
     'hero.btn.rsvp': 'RSVP',
 
@@ -175,7 +175,7 @@ const translations = {
     'schedule.day1.dress.code': 'Casual, white, beige and earth tones',
     'schedule.day1.dress.reference': 'View Pinterest references',
     'schedule.day1.location.title': 'Where?',
-    'schedule.day1.location.address': 'Cervecería del Valle Sagrado - Taproom Pachar, Paradero Puente Pachar, Pachar, Peru',
+    'schedule.day1.location.address': 'Cervecería del Valle Sagrado - Taproom Pachar',
     'schedule.day1.location.note': 'Important: this brewery location is in Ollantaytambo, 20 minutes from Urubamba.',
     'schedule.day2.date': 'Saturday, May 2nd, 2026',
     'schedule.day2.time': '11:00 a.m.',
@@ -184,7 +184,7 @@ const translations = {
     'schedule.day2.dress.title': 'Dress Code',
     'schedule.day2.dress.code': 'Sport Casual (dress warmly)',
     'schedule.day2.location.title': 'Where?',
-    'schedule.day2.location.address': 'Laguna Piuray, Chinchero, Cusco',
+    'schedule.day2.location.address': 'Playa La Sirena, Laguna Piuray, Chinchero, Cusco',
 
     // Trip
     'trip.title': 'The Trip',
@@ -199,7 +199,7 @@ const translations = {
 
     // Accommodation
     'accommodation.title': 'Accommodation',
-    'accommodation.subtitle': 'Our wedding planner has helped us research great lodging options in Urubamba and surroundings.',
+    'accommodation.subtitle': 'Our wedding planner, Diana, has helped us research great lodging options in Urubamba and surroundings, and this is where we recommend staying. Note: May is high season so we recommend booking in advance.',
     'accommodation.visit': 'Visit website',
     'accommodation.tierraviva.description': 'Reliable chain; good value for money.',
     'accommodation.tierraviva.location': 'Urubamba – 7 min from brewery',
@@ -211,7 +211,7 @@ const translations = {
     // RSVP
     'rsvp.title': 'RSVP',
     'rsvp.description': 'If you\'re here, it\'s because you mean a lot to us and we want you to be part of our union. Your confirmation helps us plan everything with care and love.',
-    'rsvp.deadline': 'Please confirm your attendance before March 1st, 2026.',
+    'rsvp.deadline': 'Please confirm your attendance before February 1st, 2026.',
     'rsvp.button': 'Go to RSVP form',
     'rsvp.thanks': 'Thank you for taking the time to confirm. We\'re excited to celebrate with you!',
 
@@ -262,7 +262,7 @@ const translations = {
     'story.timeline.metLabel': 'We meet in Cusco',
     'story.timeline.moved': 'August 2023',
     'story.timeline.movedLabel': 'We move in together',
-    'story.timeline.engaged': 'October 2024',
+    'story.timeline.engaged': 'May 2025',
     'story.timeline.engagedLabel': 'Engagement in Japan',
     'story.timeline.wedding': 'May 2026',
     'story.timeline.weddingLabel': 'We get married!',

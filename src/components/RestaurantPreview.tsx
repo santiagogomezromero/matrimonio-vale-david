@@ -14,12 +14,12 @@ interface Restaurant {
 
 const restaurants: Restaurant[] = [
   {
-    id: 'biga',
-    name: 'Biga',
+    id: 'migas',
+    name: 'Migas del Valle',
     specialtyEs: 'Panadería artesanal y café gourmet',
     specialtyEn: 'Artisan bakery and gourmet coffee',
     image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&auto=format&fit=crop',
-    mapLink: 'https://maps.app.goo.gl/yKY7CgicpiWZ4tdY8'
+    mapLink: 'https://maps.app.goo.gl/TcuhaknScEsWmJ7aA'
   },
   {
     id: 'tierra',
@@ -45,7 +45,7 @@ export const RestaurantPreview = () => {
   return (
     <section className="py-12">
       <h3 className="text-2xl font-display text-center mb-2 text-primary uppercase tracking-wider">
-        {language === 'es' ? '¿Dónde Puedo Comer en Urubamba?' : 'Where Can I Eat in Urubamba?'}
+        {language === 'es' ? '¿Dónde Comer en Urubamba?' : 'Where to Eat in Urubamba?'}
       </h3>
       <p className="text-center text-muted-foreground mb-8">
         {language === 'es' 

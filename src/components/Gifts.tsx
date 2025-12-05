@@ -1,11 +1,12 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
-import { Gift, CreditCard, Smartphone } from 'lucide-react';
+import { Gift, CreditCard, Smartphone, ExternalLink } from 'lucide-react';
 import { IncaDivider, Chakana } from '@/components/ui/inca-patterns';
 import { AnimatedSection } from '@/hooks/use-scroll-animation';
+import { Button } from '@/components/ui/button';
 
 export const Gifts = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <section id="gifts" className="min-h-screen py-20 px-4 bg-muted relative overflow-hidden">
@@ -44,7 +45,7 @@ export const Gifts = () => {
             {/* Decorative image */}
             <div className="aspect-[16/9] rounded-xl overflow-hidden shadow-lg mb-6">
               <img 
-                src="https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110351/IMG_5943_lhcbji.jpg"
+                src="https://res.cloudinary.com/dlyvsy67u/image/upload/v1764967924/Foto_regalos_Valeria_y_David_vdz1b3.jpg"
                 alt="Vale & David"
                 className="w-full h-full object-cover"
                 loading="lazy"
@@ -63,61 +64,100 @@ export const Gifts = () => {
           </div>
           </AnimatedSection>
 
-          {/* Right Column - Bank Details */}
+          {/* Right Column - Bank Details (Spanish) or Registry Link (English) */}
           <AnimatedSection animation="fade-right" delay={200}>
-          <Card className="bg-card/95 backdrop-blur-sm">
-            <CardContent className="p-6 space-y-6">
-              <div className="flex items-center justify-center gap-3">
-                <Chakana className="w-5 h-5 opacity-50" />
-                <h3 className="text-xl font-display text-center text-primary uppercase">
-                  {t('gifts.banking.title')}
-                </h3>
-                <Chakana className="w-5 h-5 opacity-50" />
-              </div>
-              
-              {/* BCP Soles */}
-              <div className="space-y-2 pb-4 border-b">
-                <div className="flex items-center gap-2 text-primary font-semibold">
-                  <CreditCard className="w-5 h-5" />
-                  <span>BCP - {t('gifts.banking.soles')}</span>
+          {language === 'es' ? (
+            <Card className="bg-card/95 backdrop-blur-sm">
+              <CardContent className="p-6 space-y-6">
+                <div className="flex items-center justify-center gap-3">
+                  <Chakana className="w-5 h-5 opacity-50" />
+                  <h3 className="text-xl font-display text-center text-primary uppercase">
+                    {t('gifts.banking.title')}
+                  </h3>
+                  <Chakana className="w-5 h-5 opacity-50" />
                 </div>
-                <div className="pl-7 space-y-1 text-sm">
-                  <p><span className="font-medium">{t('gifts.banking.account')}:</span> 285-9302-9425-081</p>
-                  <p><span className="font-medium">CCI:</span> 002-285-193029425081-53</p>
+                
+                {/* BCP Soles */}
+                <div className="space-y-2 pb-4 border-b">
+                  <div className="flex items-center gap-2 text-primary font-semibold">
+                    <CreditCard className="w-5 h-5" />
+                    <span>BCP - {t('gifts.banking.soles')}</span>
+                  </div>
+                  <div className="pl-7 space-y-1 text-sm">
+                    <p><span className="font-medium">{t('gifts.banking.account')}:</span> 285-9302-9425-081</p>
+                    <p><span className="font-medium">CCI:</span> 002-285-193029425081-53</p>
+                  </div>
                 </div>
-              </div>
 
-              {/* BCP Dollars */}
-              <div className="space-y-2 pb-4 border-b">
-                <div className="flex items-center gap-2 text-primary font-semibold">
-                  <CreditCard className="w-5 h-5" />
-                  <span>BCP - {t('gifts.banking.dollars')}</span>
+                {/* BCP Dollars */}
+                <div className="space-y-2 pb-4 border-b">
+                  <div className="flex items-center gap-2 text-primary font-semibold">
+                    <CreditCard className="w-5 h-5" />
+                    <span>BCP - {t('gifts.banking.dollars')}</span>
+                  </div>
+                  <div className="pl-7 space-y-1 text-sm">
+                    <p><span className="font-medium">{t('gifts.banking.account')}:</span> 285-9302-9634-192</p>
+                    <p><span className="font-medium">CCI:</span> 002-285-193029634192-55</p>
+                  </div>
                 </div>
-                <div className="pl-7 space-y-1 text-sm">
-                  <p><span className="font-medium">{t('gifts.banking.account')}:</span> 285-9302-9634-192</p>
-                  <p><span className="font-medium">CCI:</span> 002-285-193029634192-55</p>
-                </div>
-              </div>
 
-              {/* Yape/Plin */}
-              <div className="space-y-2 pb-4 border-b">
-                <div className="flex items-center gap-2 text-primary font-semibold">
-                  <Smartphone className="w-5 h-5" />
-                  <span>Yape / Plin</span>
+                {/* Yape/Plin */}
+                <div className="space-y-2 pb-4 border-b">
+                  <div className="flex items-center gap-2 text-primary font-semibold">
+                    <Smartphone className="w-5 h-5" />
+                    <span>Yape / Plin</span>
+                  </div>
+                  <div className="pl-7 text-sm">
+                    <p><span className="font-medium">{t('gifts.banking.phone')}:</span> 986 631 003</p>
+                  </div>
                 </div>
-                <div className="pl-7 text-sm">
-                  <p><span className="font-medium">{t('gifts.banking.phone')}:</span> 986 631 003</p>
-                </div>
-              </div>
 
-              {/* Beneficiaries */}
-              <div className="bg-accent/50 p-4 rounded-lg text-sm">
-                <p className="font-medium mb-1">{t('gifts.banking.beneficiaries')}:</p>
-                <p>David Amoruso</p>
-                <p>Valeria Fabiola Landeo Villarreal</p>
-              </div>
-            </CardContent>
-          </Card>
+                {/* Beneficiaries */}
+                <div className="bg-accent/50 p-4 rounded-lg text-sm">
+                  <p className="font-medium mb-1">{t('gifts.banking.beneficiaries')}:</p>
+                  <p>David Amoruso</p>
+                  <p>Valeria Fabiola Landeo Villarreal</p>
+                </div>
+              </CardContent>
+            </Card>
+          ) : (
+            <Card className="bg-card/95 backdrop-blur-sm">
+              <CardContent className="p-6 space-y-6">
+                <div className="flex items-center justify-center gap-3">
+                  <Chakana className="w-5 h-5 opacity-50" />
+                  <h3 className="text-xl font-display text-center text-primary uppercase">
+                    US Wedding Registry
+                  </h3>
+                  <Chakana className="w-5 h-5 opacity-50" />
+                </div>
+                
+                <p className="text-center text-muted-foreground">
+                  We've set up a wedding registry for our US guests. Click below to view our registry and contribute to our honeymoon fund.
+                </p>
+                
+                <Button 
+                  asChild 
+                  size="lg" 
+                  className="w-full"
+                >
+                  <a 
+                    href="#" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2"
+                  >
+                    <Gift className="w-5 h-5" />
+                    View US Wedding Registry
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                </Button>
+                
+                <p className="text-xs text-center text-muted-foreground italic">
+                  Registry link coming soon
+                </p>
+              </CardContent>
+            </Card>
+          )}
           </AnimatedSection>
         </div>
       </div>
