@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { IncaDivider, IntiSun, MountainSilhouette, IncaStar } from '@/components/ui/inca-patterns';
-import { Heart, MapPin, Calendar, Sparkles, Plane } from 'lucide-react';
+import { Heart, Plane } from 'lucide-react';
 import { Lightbox } from '@/components/ui/lightbox';
 import { AnimatedSection } from '@/hooks/use-scroll-animation';
 
@@ -18,42 +18,103 @@ export const Story = () => {
     setLightboxOpen(true);
   };
 
+  // Complete timeline as specified
   const timelineEvents = [
     { 
-      date: t('story.timeline.met'), 
-      label: t('story.timeline.metLabel'),
-      icon: Heart,
+      date: language === 'es' ? 'Abril 2022' : 'April 2022',
+      title: language === 'es' ? 'Nos conocemos en Huarán - Cusco' : 'We meet in Huarán - Cusco',
       description: language === 'es' 
-        ? 'Un encuentro casual que cambió nuestras vidas para siempre.' 
-        : 'A casual encounter that changed our lives forever.',
-      image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110322/IMG_1160_fq1o3m.jpg'
+        ? 'Un encuentro que no planeamos que cambió nuestras vidas.'
+        : 'An unplanned encounter that changed our lives.',
+      image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764967461/Abril_2022_Valeria_y_David_gxvgou.jpg'
     },
     { 
-      date: t('story.timeline.moved'), 
-      label: t('story.timeline.movedLabel'),
-      icon: MapPin,
-      description: language === 'es'
-        ? 'Decidimos comenzar nuestra aventura juntos en un nuevo país.'
-        : 'We decided to start our adventure together in a new country.',
-      image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110232/IMG_4636_fkzoml.jpg'
+      date: language === 'es' ? 'Julio 2022' : 'July 2022',
+      title: language === 'es' ? 'Salíamos como amigos' : 'We went out as friends',
+      description: language === 'es' 
+        ? 'Nos fuimos de caminatas y nos veíamos muy seguido.'
+        : 'We went hiking and saw each other very often.',
+      image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764967573/JULIO_2022_Valeria_y_David_iogg21.jpg'
     },
     { 
-      date: t('story.timeline.engaged'), 
-      label: t('story.timeline.engagedLabel'),
-      icon: Sparkles,
-      description: language === 'es'
-        ? 'En la mágica tierra del sol naciente, sellamos nuestra promesa.'
-        : 'In the magical land of the rising sun, we sealed our promise.',
-      image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110141/IMG_7219_fqs5un.jpg'
+      date: language === 'es' ? 'Setiembre 2022' : 'September 2022',
+      title: language === 'es' ? 'David le preguntó a Valeria si estaban en algo serio' : 'David asked Valeria if they were serious',
+      description: language === 'es' 
+        ? 'Valeria le dijo que sí e iniciaron su relación como pareja.'
+        : 'Valeria said yes and they started their relationship as a couple.',
+      image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764967570/SEPTIEMBRE_2022_Valeria_y_David_gvdzsd.jpg'
     },
     { 
-      date: t('story.timeline.wedding'), 
-      label: t('story.timeline.weddingLabel'),
-      icon: Calendar,
-      description: language === 'es'
-        ? 'El día que hemos soñado, rodeados de quienes más amamos.'
-        : 'The day we have dreamed of, surrounded by those we love most.',
-      image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110246/IMG_8020_uwzc1c.jpg'
+      date: language === 'es' ? 'Noviembre 2022' : 'November 2022',
+      title: language === 'es' ? 'David conoció a los papás de Valeria' : 'David met Valeria\'s parents',
+      description: language === 'es' 
+        ? 'Él estaba nervioso. Felizmente la mamá de Valeria dijo "está aprobado".'
+        : 'He was nervous. Fortunately, Valeria\'s mom said "he\'s approved".',
+      image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764967575/NOVIEMBRE_2022_Valeria_y_David_mlwvhh.jpg'
+    },
+    { 
+      date: language === 'es' ? 'Enero 2023' : 'January 2023',
+      title: language === 'es' ? 'Valeria aprende a montar bicicleta' : 'Valeria learns to ride a bike',
+      description: language === 'es' 
+        ? 'Valeria le pidió a David que le enseñara a montar bicicleta para poder unirse a un viaje familiar de David y poder conocer y disfrutar con sus papás. ¡David fue el mejor profesor de todos!'
+        : 'Valeria asked David to teach her to ride a bike so she could join a family trip with David and meet his parents. David was the best teacher ever!',
+      image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764967580/ENERO_2023_q188nu.jpg'
+    },
+    { 
+      date: language === 'es' ? 'Marzo 2023' : 'March 2023',
+      title: language === 'es' ? 'Valeria conoce a los papás de David' : 'Valeria meets David\'s parents',
+      description: language === 'es' 
+        ? 'Finalmente Valeria conoció a los papás de David en Florida, fue un road trip con muchos momentos lindos compartidos.'
+        : 'Finally, Valeria met David\'s parents in Florida, it was a road trip with many beautiful shared moments.',
+      image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764967461/MARZO_2023_Valeria_y_David_mm3dmp.jpg'
+    },
+    { 
+      date: language === 'es' ? 'Agosto 2023' : 'August 2023',
+      title: language === 'es' ? 'Nos mudamos juntos' : 'We move in together',
+      description: language === 'es' 
+        ? 'Vale y Dave firmaron un contrato para vivir juntos, un nuevo capítulo inició.'
+        : 'Vale and Dave signed a contract to live together, a new chapter began.',
+      image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764967565/AGOSTO_DEL_2023_VALERIA_Y_DAVID_rjbk2x.jpg'
+    },
+    { 
+      date: language === 'es' ? 'Noviembre 2023' : 'November 2023',
+      title: language === 'es' ? 'Descubrimos que nos encanta viajar' : 'We discover we love to travel',
+      description: language === 'es' 
+        ? 'Empezamos por visitar distintos lugares de Perú.'
+        : 'We started by visiting different places in Peru.',
+      image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764967580/NOVIEMBRE_DEL_2023_VALERIA_Y_DAVID_gyutdc.jpg'
+    },
+    { 
+      date: language === 'es' ? 'Marzo 2024' : 'March 2024',
+      title: language === 'es' ? 'Viaje a India y Nepal' : 'Trip to India and Nepal',
+      description: language === 'es' 
+        ? 'Un viaje que disfrutamos mucho de inicio a fin.'
+        : 'A trip we enjoyed from start to finish.',
+      image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764967570/MARZO_2024_VALERIA_Y_DAVID_qdo1fa.jpg'
+    },
+    { 
+      date: language === 'es' ? 'Abril 2025' : 'April 2025',
+      title: language === 'es' ? 'Viaje a Japón y Taiwán' : 'Trip to Japan and Taiwan',
+      description: language === 'es' 
+        ? 'Nos quedamos enamorados de estos lugares y de su gente.'
+        : 'We fell in love with these places and their people.',
+      image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764967575/ABRIL_2025_VALERIA_Y_DAVID_yobexi.jpg'
+    },
+    { 
+      date: language === 'es' ? 'Mayo 2025' : 'May 2025',
+      title: language === 'es' ? 'Pedida en Japón' : 'Proposal in Japan',
+      description: language === 'es' 
+        ? 'En esta mágica tierra, nos elegimos con más firmeza.'
+        : 'In this magical land, we chose each other more firmly.',
+      image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764967492/MAYO_2025_VALERIA_Y_DAVID_ibxkn2.jpg'
+    },
+    { 
+      date: language === 'es' ? 'Mayo 2026' : 'May 2026',
+      title: language === 'es' ? 'Matrimonio' : 'Wedding',
+      description: language === 'es' 
+        ? 'El día del reafirmar el SÍ y seguir dedicándonos mucho amor.'
+        : 'The day to reaffirm our YES and continue dedicating much love to each other.',
+      image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764967924/MAYO_2026_VALERIA_Y_DAVID_pgivsk.jpg'
     },
   ];
 
@@ -61,7 +122,7 @@ export const Story = () => {
     {
       titleEs: 'La Propuesta en Japón',
       titleEn: 'The Proposal in Japan',
-      icon: Sparkles,
+      icon: Heart,
       images: [
         { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/f_webp/IMG_7351_2_wt2gyz', alt: 'Japan Trip', location: 'Japan' },
         { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110141/IMG_7219_fqs5un.jpg', alt: 'Proposal', location: 'Japan' },
@@ -97,6 +158,10 @@ export const Story = () => {
     }
   ];
 
+  // Check if David's story has content
+  const davidStoryText = t('story.david.text');
+  const hasDavidStory = davidStoryText && davidStoryText.trim().length > 0;
+
   return (
     <section id="story" className="min-h-screen py-20 px-4 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
       {/* Parallax background elements */}
@@ -118,7 +183,7 @@ export const Story = () => {
         </AnimatedSection>
 
         {/* Their Stories - Side by Side */}
-        <div className="grid md:grid-cols-2 gap-8 mb-20">
+        <div className={`grid ${hasDavidStory ? 'md:grid-cols-2' : 'md:grid-cols-1 max-w-3xl mx-auto'} gap-8 mb-20`}>
           {/* Vale's Story */}
           <AnimatedSection animation="fade-left" delay={100}>
           <Card className="overflow-hidden group hover:shadow-xl transition-all duration-500">
@@ -143,35 +208,37 @@ export const Story = () => {
           </Card>
           </AnimatedSection>
 
-          {/* David's Story */}
-          <AnimatedSection animation="fade-right" delay={200}>
-          <Card className="overflow-hidden group hover:shadow-xl transition-all duration-500">
-            <div className="h-2 bg-gradient-to-r from-secondary/60 via-secondary to-secondary/60" />
-            <CardContent className="p-8 space-y-6">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center">
-                  <span className="text-2xl font-display text-secondary-foreground">D</span>
+          {/* David's Story - Only show if has content */}
+          {hasDavidStory && (
+            <AnimatedSection animation="fade-right" delay={200}>
+            <Card className="overflow-hidden group hover:shadow-xl transition-all duration-500">
+              <div className="h-2 bg-gradient-to-r from-secondary/60 via-secondary to-secondary/60" />
+              <CardContent className="p-8 space-y-6">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center">
+                    <span className="text-2xl font-display text-secondary-foreground">D</span>
+                  </div>
+                  <h3 className="text-2xl font-display text-primary">
+                    {t('story.david.title')}
+                  </h3>
                 </div>
-                <h3 className="text-2xl font-display text-primary">
-                  {t('story.david.title')}
-                </h3>
-              </div>
-              <div className="space-y-4 text-foreground leading-relaxed">
-                {t('story.david.text').split('\n\n').map((paragraph, index) => (
-                  <p key={index} className="first-letter:text-3xl first-letter:font-display first-letter:text-primary first-letter:mr-1">
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-          </AnimatedSection>
+                <div className="space-y-4 text-foreground leading-relaxed">
+                  {davidStoryText.split('\n\n').map((paragraph, index) => (
+                    <p key={index} className="first-letter:text-3xl first-letter:font-display first-letter:text-primary first-letter:mr-1">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+            </AnimatedSection>
+          )}
         </div>
 
         {/* Mountain divider */}
         <MountainSilhouette className="my-12" />
 
-        {/* Timeline - Enhanced */}
+        {/* Timeline - Enhanced with all events */}
         <AnimatedSection animation="fade-up" delay={100}>
         <div className="mb-20">
           <h3 className="text-2xl font-display text-center mb-12 text-primary uppercase flex items-center justify-center gap-3">
@@ -186,7 +253,6 @@ export const Story = () => {
             
             <div className="space-y-12">
               {timelineEvents.map((event, index) => {
-                const Icon = event.icon;
                 const isLeft = index % 2 === 0;
                 
                 return (
@@ -197,18 +263,21 @@ export const Story = () => {
                     <div className={`w-5/12 ${isLeft ? 'text-right' : 'text-left'}`}>
                       <Card className="inline-block bg-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden">
                         {event.image && (
-                          <div className="aspect-[16/9] overflow-hidden">
+                          <div 
+                            className="aspect-[16/9] overflow-hidden cursor-pointer"
+                            onClick={() => openLightbox([{ src: event.image, alt: event.title }], 0)}
+                          >
                             <img 
                               src={event.image} 
-                              alt={event.label}
-                              className="w-full h-full object-cover"
+                              alt={event.title}
+                              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                               loading="lazy"
                             />
                           </div>
                         )}
                         <CardContent className="p-6">
                           <p className="font-display text-primary text-xl mb-1">{event.date}</p>
-                          <p className="font-semibold text-foreground mb-2">{event.label}</p>
+                          <p className="font-semibold text-foreground mb-2">{event.title}</p>
                           <p className="text-sm text-muted-foreground">{event.description}</p>
                         </CardContent>
                       </Card>
@@ -217,7 +286,7 @@ export const Story = () => {
                     {/* Center icon */}
                     <div className="relative z-10 flex-shrink-0">
                       <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-lg border-4 border-background">
-                        <Icon className="w-5 h-5 text-primary-foreground" />
+                        <Heart className="w-5 h-5 text-primary-foreground" />
                       </div>
                     </div>
                     

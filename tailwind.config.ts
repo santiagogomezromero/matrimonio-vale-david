@@ -67,6 +67,8 @@ export default {
         display: ['Cormorant Garamond', 'Georgia', 'serif'],
         body: ['Lato', 'system-ui', 'sans-serif'],
         script: ['Great Vibes', 'cursive'],
+        barcelony: ['Barcelony', 'cursive'],
+        montserrat: ['Montserrat', 'sans-serif'],
       },
       keyframes: {
         "accordion-down": {

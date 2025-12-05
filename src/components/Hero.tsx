@@ -1,7 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { IntiSun, IncaStar } from '@/components/ui/inca-patterns';
+import { IncaStar } from '@/components/ui/inca-patterns';
 import { Countdown } from '@/components/Countdown';
 import logo from '@/assets/logo.png';
 
@@ -21,15 +21,10 @@ export const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
         style={{
-          backgroundImage: 'url(https://res.cloudinary.com/dlyvsy67u/image/upload/v1764103527/peak-of-machu-picchu-lit_peirp6.webp)',
+          backgroundImage: 'url(https://res.cloudinary.com/dlyvsy67u/image/upload/v1764967924/Foto_Valeria_y_David_tsc9ag.jpg)',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background/95"></div>
-      </div>
-
-      {/* Decorative sun rays */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] opacity-10 pointer-events-none">
-        <IntiSun className="w-full h-full text-amber-400 animate-spin-slow" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-background/90"></div>
       </div>
 
       {/* Floating stars */}
@@ -43,21 +38,6 @@ export const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-20 text-center">
         <div className="animate-fade-in">
-          {/* Couple Photo */}
-          <div className="flex justify-center mb-8">
-            <div className="relative">
-              <div className="w-44 h-44 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-amber-400/50 shadow-2xl ring-4 ring-amber-400/20 ring-offset-4 ring-offset-transparent">
-                <img 
-                  src="https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110246/IMG_8020_uwzc1c.jpg" 
-                  alt="Valeria & David"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              {/* Decorative Sun */}
-              <IntiSun className="absolute -bottom-3 -right-3 w-12 h-12 text-amber-400 drop-shadow-lg" />
-            </div>
-          </div>
-
           {/* Logo */}
           <div className="flex justify-center mb-6">
             <img 
@@ -67,9 +47,9 @@ export const Hero = () => {
             />
           </div>
 
-          {/* Title - Enhanced visibility */}
+          {/* Title - Barcelony font */}
           <div className="relative mb-6">
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-2 tracking-wider 
+            <h1 className="font-barcelony text-5xl md:text-7xl lg:text-8xl text-white mb-2 tracking-wide 
               drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)] 
               [text-shadow:_0_2px_20px_rgba(0,0,0,0.8),_0_4px_40px_rgba(0,0,0,0.6)]">
               {t('hero.title')}
@@ -77,12 +57,13 @@ export const Hero = () => {
             {/* Decorative line under title */}
             <div className="flex items-center justify-center gap-3 mt-4">
               <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent to-amber-400/70" />
-              <IntiSun className="w-6 h-6 text-amber-400" />
+              <IncaStar className="w-4 h-4 text-amber-400" />
               <div className="h-px w-16 md:w-24 bg-gradient-to-l from-transparent to-amber-400/70" />
             </div>
           </div>
           
-          <p className="font-script text-2xl md:text-3xl text-white mb-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+          {/* Subtitle - Montserrat font, increased size */}
+          <p className="font-montserrat text-xl md:text-2xl text-white mb-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)] tracking-wider">
             {t('hero.subtitle')}
           </p>
 
@@ -91,7 +72,7 @@ export const Hero = () => {
             <Countdown />
           </div>
 
-          {/* Date Cards */}
+          {/* Date Cards - Updated order */}
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
             <Card className="bg-card/95 backdrop-blur-md p-6 border-border shadow-xl">
               <p className="font-display text-lg font-semibold text-primary mb-2">

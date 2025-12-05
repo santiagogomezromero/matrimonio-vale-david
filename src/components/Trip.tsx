@@ -12,12 +12,11 @@ export const Trip = () => {
     { name: 'Zenobio', phone: '+51 984 645 193' },
     { name: 'Alberto', phone: '+51 926 065 431' },
     { name: 'Freddie', phone: '+51 994 204 951' },
-    { name: 'Miguel', phone: '+51 994 731 023' },
+    { name: 'Roger (varios autos)', phone: '+51 979 798 481' },
     { name: 'Edu', phone: '+51 912 144 218' },
     { name: 'Isaac', phone: '+51 984 800 860' },
     { name: 'Eliud', phone: '+51 951 995 982' },
     { name: 'Miguel (15 pax)', phone: '+51 994 731 023' },
-    { name: 'Roger (6+ pax)', phone: '+51 979 798 481' },
   ];
 
   return (

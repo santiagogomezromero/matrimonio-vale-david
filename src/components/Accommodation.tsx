@@ -2,7 +2,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { MapPin, ExternalLink, Phone, Mail, Home } from 'lucide-react';
+import { MapPin, ExternalLink, Phone, Mail, Home, FileText } from 'lucide-react';
 import { IncaDivider, IntiSun, IncaStar } from '@/components/ui/inca-patterns';
 import { AnimatedSection } from '@/hooks/use-scroll-animation';
 
@@ -21,7 +21,8 @@ const hotelImages: Record<string, string> = {
 export const Accommodation = () => {
   const { t, language } = useLanguage();
 
-  const hotels = [
+  // Featured hotels with wedding discount and shuttle
+  const featuredHotels = [
     {
       name: 'Tierra Viva Valle Sagrado',
       price: '$80–140',
@@ -31,9 +32,8 @@ export const Accommodation = () => {
       phone: '+51 84 600036',
       whatsapp: '+51 945 486 132',
       email: 'reservas@tierravivahoteles.com',
-      badge: 'wedding-discount',
       featured: true,
-      notes: t('accommodation.tierraviva.notes')
+      promoCode: true,
     },
     {
       name: 'Tambo del Inka',
@@ -43,10 +43,13 @@ export const Accommodation = () => {
       website: 'https://www.marriott.com/es/default.mi',
       phone: '+51 84 581 777',
       email: 'corporativo@intursa.com.pe',
-      badge: 'wedding-discount',
       featured: true,
-      notes: t('accommodation.tambo.notes')
+      formLink: 'https://docs.google.com/document/d/1GgDTjk7PK6NuBmIOjcMwROHkxr85aiRd/edit?usp=drive_link',
     },
+  ];
+
+  // Other recommended hotels
+  const otherHotels = [
     {
       name: 'Casa de la Chola',
       price: '$60–100',
@@ -65,7 +68,6 @@ export const Accommodation = () => {
       phone: '+51 84 606 262',
       whatsapp: '+51 994 300 428',
       email: 'reservas_urubamba@taypikala.com',
-      badge: 'recommended'
     },
     {
       name: 'Belmond Hotel Río Sagrado',
@@ -84,8 +86,7 @@ export const Accommodation = () => {
       website: 'https://lascasitasdelarcoiris.com/',
       phone: '+51 960 224 640',
       email: 'lascasitasdelarcoiris@gmail.com',
-      badge: 'recommended',
-      notes: language === 'es' ? 'Usa el código "Vale & David Wedding" para tarifa especial de S/280 por noche.' : 'Use code "Vale & David Wedding" for special rate of S/280 per night.'
+      notes: language === 'es' ? 'Usa el código "Vale & David Wedding" para tarifa especial de S/280 por noche.' : 'Use code "Vale & David Wedding" for special rate of S/280 per night.',
     },
     {
       name: 'Lizzy Wasi Boutique Hotel',
@@ -138,6 +139,110 @@ export const Accommodation = () => {
     },
   ];
 
+  const renderHotelCard = (hotel: typeof featuredHotels[0] | typeof otherHotels[0], index: number, isFeatured: boolean = false) => (
+    <Card 
+      key={index} 
+      className={`overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col ${isFeatured ? 'ring-2 ring-primary' : ''}`}
+    >
+      {/* Hotel Preview Image */}
+      <div className="aspect-[16/10] relative overflow-hidden bg-muted">
+        <img 
+          src={hotelImages[hotel.name]} 
+          alt={hotel.name}
+          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+          loading="lazy"
+          onError={(e) => {
+            e.currentTarget.src = '/placeholder.svg';
+          }}
+        />
+        {isFeatured && (
+          <Badge 
+            variant="default" 
+            className="absolute top-3 right-3"
+          >
+            {language === 'es' ? 'Descuento' : 'Discount'}
+          </Badge>
+        )}
+      </div>
+      
+      <CardHeader className="pb-2">
+        <CardTitle className="text-xl font-display leading-tight">
+          {hotel.name}
+        </CardTitle>
+        <CardDescription className="text-sm">{hotel.description}</CardDescription>
+      </CardHeader>
+      <CardContent className="space-y-3 flex-1 flex flex-col">
+        <div className="flex items-center gap-2 text-sm">
+          <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
+          <span className="text-muted-foreground">{hotel.location}</span>
+        </div>
+        
+        <p className="text-lg font-semibold text-primary">{hotel.price} {language === 'es' ? 'por noche' : 'per night'}</p>
+        
+        {'promoCode' in hotel && hotel.promoCode && (
+          <div className="text-xs text-muted-foreground bg-accent/50 p-3 rounded-md">
+            {language === 'es' 
+              ? 'Usa el código promocional "BODA-V&D" en la web para tarifas especiales. (Ciudadanos peruanos: +18% IGV a pagar en el hotel)'
+              : 'Use promo code "BODA-V&D" on the website for special rates. (Peruvian citizens: +18% VAT to be paid at hotel)'}
+          </div>
+        )}
+        
+        {'formLink' in hotel && hotel.formLink && (
+          <Button 
+            asChild 
+            variant="secondary" 
+            size="sm"
+            className="w-full"
+          >
+            <a href={hotel.formLink} target="_blank" rel="noopener noreferrer">
+              <FileText className="w-4 h-4 mr-2" />
+              {language === 'es' ? 'Ver formulario' : 'View form'}
+              <ExternalLink className="w-3 h-3 ml-2" />
+            </a>
+          </Button>
+        )}
+        
+        {'notes' in hotel && hotel.notes && (
+          <p className="text-xs text-muted-foreground bg-accent/50 p-3 rounded-md">
+            {hotel.notes}
+          </p>
+        )}
+        
+        <div className="flex flex-wrap gap-2 text-xs pt-2">
+          {hotel.phone && (
+            <a 
+              href={`tel:${hotel.phone}`}
+              className="flex items-center gap-1 text-muted-foreground hover:text-primary"
+            >
+              <Phone className="w-3 h-3" />
+              {language === 'es' ? 'Teléfono' : 'Phone'}
+            </a>
+          )}
+          {hotel.email && (
+            <a 
+              href={`mailto:${hotel.email}`}
+              className="flex items-center gap-1 text-muted-foreground hover:text-primary"
+            >
+              <Mail className="w-3 h-3" />
+              Email
+            </a>
+          )}
+        </div>
+        
+        <Button 
+          asChild 
+          variant="outline" 
+          className="w-full mt-auto"
+        >
+          <a href={hotel.website} target="_blank" rel="noopener noreferrer">
+            {t('accommodation.visit')}
+            <ExternalLink className="w-4 h-4 ml-2" />
+          </a>
+        </Button>
+      </CardContent>
+    </Card>
+  );
+
   return (
     <section id="accommodation" className="min-h-screen py-20 px-4 bg-muted relative overflow-hidden">
       {/* Decorative Inca elements - sun, stars */}
@@ -152,96 +257,33 @@ export const Accommodation = () => {
             {t('accommodation.title')}
           </h2>
           <IncaDivider className="max-w-md mx-auto mb-6" />
-          <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-12">
-            {t('accommodation.subtitle')}
+          <p className="text-center text-muted-foreground max-w-3xl mx-auto mb-8">
+            {language === 'es' 
+              ? 'Nuestra organizadora de bodas, Diana, nos ha ayudado a investigar buenas opciones de alojamiento en Urubamba y sus alrededores, y es donde recomendamos hospedarse. Nota: Mayo es temporada alta por lo que les recomendamos reservar con anticipación.'
+              : 'Our wedding planner, Diana, has helped us research great lodging options in Urubamba and surroundings, and this is where we recommend staying. Note: May is high season so we recommend booking in advance.'}
           </p>
         </AnimatedSection>
 
+        {/* Featured Hotels Section */}
         <AnimatedSection animation="fade-up" delay={100}>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {hotels.map((hotel, index) => (
-            <Card 
-              key={index} 
-              className={`overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col ${hotel.featured ? 'ring-2 ring-primary' : ''}`}
-            >
-              {/* Hotel Preview Image */}
-              <div className="aspect-[16/10] relative overflow-hidden bg-muted">
-                <img 
-                  src={hotelImages[hotel.name]} 
-                  alt={hotel.name}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                  onError={(e) => {
-                    e.currentTarget.src = '/placeholder.svg';
-                  }}
-                />
-                {hotel.badge && (
-                  <Badge 
-                    variant={hotel.badge === 'wedding-discount' ? 'default' : 'secondary'} 
-                    className="absolute top-3 right-3"
-                  >
-                    {hotel.badge === 'wedding-discount' 
-                      ? (language === 'es' ? 'Descuento' : 'Discount')
-                      : (language === 'es' ? 'Recomendado' : 'Recommended')}
-                  </Badge>
-                )}
-              </div>
-              
-              <CardHeader className="pb-2">
-                <CardTitle className="text-xl font-display leading-tight">
-                  {hotel.name}
-                </CardTitle>
-                <CardDescription className="text-sm">{hotel.description}</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-3 flex-1 flex flex-col">
-                <div className="flex items-center gap-2 text-sm">
-                  <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
-                  <span className="text-muted-foreground">{hotel.location}</span>
-                </div>
-                
-                <p className="text-lg font-semibold text-primary">{hotel.price} {language === 'es' ? 'por noche' : 'per night'}</p>
-                
-                {hotel.notes && (
-                  <p className="text-xs text-muted-foreground bg-accent/50 p-3 rounded-md">
-                    {hotel.notes}
-                  </p>
-                )}
-                
-                <div className="flex flex-wrap gap-2 text-xs pt-2">
-                  {hotel.phone && (
-                    <a 
-                      href={`tel:${hotel.phone}`}
-                      className="flex items-center gap-1 text-muted-foreground hover:text-primary"
-                    >
-                      <Phone className="w-3 h-3" />
-                      {language === 'es' ? 'Teléfono' : 'Phone'}
-                    </a>
-                  )}
-                  {hotel.email && (
-                    <a 
-                      href={`mailto:${hotel.email}`}
-                      className="flex items-center gap-1 text-muted-foreground hover:text-primary"
-                    >
-                      <Mail className="w-3 h-3" />
-                      Email
-                    </a>
-                  )}
-                </div>
-                
-                <Button 
-                  asChild 
-                  variant="outline" 
-                  className="w-full mt-auto"
-                >
-                  <a href={hotel.website} target="_blank" rel="noopener noreferrer">
-                    {t('accommodation.visit')}
-                    <ExternalLink className="w-4 h-4 ml-2" />
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+          <h3 className="text-xl font-display text-center text-primary mb-6">
+            {language === 'es' 
+              ? 'Hoteles con descuento para la boda y donde pasará el bus de cortesía'
+              : 'Hotels with wedding discount and shuttle service'}
+          </h3>
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            {featuredHotels.map((hotel, index) => renderHotelCard(hotel, index, true))}
+          </div>
+        </AnimatedSection>
+
+        {/* Other Hotels Section */}
+        <AnimatedSection animation="fade-up" delay={150}>
+          <h3 className="text-xl font-display text-center text-primary mb-6 mt-12">
+            {language === 'es' ? 'Otros hoteles recomendados' : 'Other recommended hotels'}
+          </h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {otherHotels.map((hotel, index) => renderHotelCard(hotel, index, false))}
+          </div>
         </AnimatedSection>
 
         {/* Airbnb Section */}
@@ -258,8 +300,8 @@ export const Accommodation = () => {
             
             <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-8">
               {language === 'es' 
-                ? 'También puedes encontrar opciones únicas en Airbnb para una experiencia más privada.'
-                : 'You can also find unique options on Airbnb for a more private experience.'}
+                ? 'También puedes encontrar opciones únicas en Airbnb.'
+                : 'You can also find unique options on Airbnb.'}
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
