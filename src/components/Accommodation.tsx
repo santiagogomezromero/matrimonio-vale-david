@@ -37,14 +37,16 @@ export const Accommodation = () => {
     },
     {
       name: 'Tambo del Inka',
-      price: '$350–600',
+      price: language === 'es' ? '$350–600' : '$322+',
       description: t('accommodation.tambo.description'),
       location: t('accommodation.tambo.location'),
       website: 'https://www.marriott.com/es/default.mi',
       phone: '+51 84 581 777',
       email: 'corporativo@intursa.com.pe',
       featured: true,
-      formLink: 'https://docs.google.com/document/d/1GgDTjk7PK6NuBmIOjcMwROHkxr85aiRd/edit?usp=drive_link',
+      formLink: language === 'es' 
+        ? 'https://docs.google.com/document/d/1GgDTjk7PK6NuBmIOjcMwROHkxr85aiRd/edit?usp=drive_link'
+        : 'https://docs.google.com/document/d/1o_yHIJd-ARf1S-72TDS7uvYfN5bKgpnC/edit?usp=drive_link&ouid=101061994273886926109&rtpof=true&sd=true',
     },
   ];
 
@@ -181,25 +183,28 @@ export const Accommodation = () => {
         
         {'promoCode' in hotel && hotel.promoCode && (
           <div className="text-xs text-muted-foreground bg-accent/50 p-3 rounded-md">
-            {language === 'es' 
-              ? 'Usa el código promocional "BODA-V&D" en la web para tarifas especiales. (Ciudadanos peruanos: +18% IGV a pagar en el hotel)'
-              : 'Use promo code "BODA-V&D" on the website for special rates. (Peruvian citizens: +18% VAT to be paid at hotel)'}
+            {t('accommodation.tierraviva.notes')}
           </div>
         )}
         
         {'formLink' in hotel && hotel.formLink && (
-          <Button 
-            asChild 
-            variant="secondary" 
-            size="sm"
-            className="w-full"
-          >
-            <a href={hotel.formLink} target="_blank" rel="noopener noreferrer">
-              <FileText className="w-4 h-4 mr-2" />
-              {language === 'es' ? 'Ver formulario' : 'View form'}
-              <ExternalLink className="w-3 h-3 ml-2" />
-            </a>
-          </Button>
+          <>
+            <div className="text-xs text-muted-foreground bg-accent/50 p-3 rounded-md">
+              {t('accommodation.tambo.notes')}
+            </div>
+            <Button 
+              asChild 
+              variant="secondary" 
+              size="sm"
+              className="w-full"
+            >
+              <a href={hotel.formLink} target="_blank" rel="noopener noreferrer">
+                <FileText className="w-4 h-4 mr-2" />
+                {language === 'es' ? 'Ver formulario' : 'View form'}
+                <ExternalLink className="w-3 h-3 ml-2" />
+              </a>
+            </Button>
+          </>
         )}
         
         {'notes' in hotel && hotel.notes && (

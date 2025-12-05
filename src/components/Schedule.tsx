@@ -54,9 +54,7 @@ export const Schedule = () => {
           
           {/* Intro text */}
           <p className="text-center text-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
-            {language === 'es' 
-              ? 'Serán 2 días de celebraciones, baile, comida rica, tradición y diversión. No será una boda típica, serán dos encuentros casuales donde disfrutaremos con nuestras personas más importantes, entre ellas tú.'
-              : 'It will be 2 days of celebrations, dancing, delicious food, tradition and fun. It won\'t be a typical wedding, but two casual gatherings where we\'ll enjoy with our most important people, including you.'}
+            {t('schedule.intro')}
           </p>
         </AnimatedSection>
         
