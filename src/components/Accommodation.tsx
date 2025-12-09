@@ -9,11 +9,11 @@ import { AnimatedSection } from '@/hooks/use-scroll-animation';
 // Real hotel images from official websites
 const hotelImages: Record<string, string> = {
   'Tierra Viva Valle Sagrado': 'https://tierravivahoteles.com/wp-content/uploads/2023/03/TVVS-11-Areas-verdes.jpg',
-  'Tambo del Inka': 'https://cache.marriott.com/content/dam/marriott-renditions/CUZTL/cuztl-exterior-8893-hor-clsc.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1336px:*',
+  'Tambo del Inka': 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1765316374/Tambodelinka_idecvb.jpg',
   'Casa de la Chola': 'https://casadelachola.com/wp-content/uploads/2019/06/gal5.jpg',
   'Taypikala Deluxe Valle Sagrado': 'https://www.taypikala.com/media/uploads/hotelextra/taypikala-valle-jardin-cuatro.jpg?q=pr:sharp/rs:fill/w:650/h:600/g:ce/f:jpg',
   'Belmond Hotel Río Sagrado': 'https://img.belmond.com/f_auto/t_960x667/photos/rsg/rsg-ext21.jpg',
-  'Las Casitas del Arcoiris': 'https://lascasitasdelarcoiris.com/wp-content/uploads/2025/05/Foto-%C2%A9Michael-Bednar-11.png',
+  'Las Casitas del Arcoiris': 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1765316374/Casitas_arcorirs_xcuj3t.jpg',
   'Lizzy Wasi Boutique Hotel': 'https://lizzywasi.com/assets/img/gallery/lizzy_wasi_6.png',
   'Wifala Harmony Hotel': 'https://s3-cdn.hotellinksolutions.com/hls/data/6312/gallery/fachada-principal_1671809996.jpg',
 };

@@ -55,11 +55,6 @@ export const Gifts = () => {
             <p className="text-lg leading-relaxed text-foreground">
               {t('gifts.message1')}
             </p>
-            {t('gifts.message2') && (
-              <p className="text-lg leading-relaxed text-foreground">
-                {t('gifts.message2')}
-              </p>
-            )}
             <p className="text-muted-foreground italic">
               {t('gifts.thanks')}
             </p>
