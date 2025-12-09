@@ -143,7 +143,7 @@ export const Gifts = () => {
                   className="w-full"
                 >
                   <a 
-                    href="#" 
+                    href="https://withjoy.com/david-and-valeria-may-26/registry" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2"
@@ -153,10 +153,6 @@ export const Gifts = () => {
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 </Button>
-                
-                <p className="text-xs text-center text-muted-foreground italic">
-                  Registry link coming soon
-                </p>
               </CardContent>
             </Card>
           )}
