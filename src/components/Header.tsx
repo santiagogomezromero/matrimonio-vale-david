@@ -60,7 +60,7 @@ export const Header = () => {
               onClick={toggleLanguage}
               className="font-medium"
             >
-              {language === 'es' ? 'EN' : 'ES'}
+              {language === 'es' ? 'English' : 'Español'}
             </Button>
 
             <button
