@@ -73,7 +73,7 @@ export const Story = () => {
       title: language === 'es' ? 'Nos mudamos juntos' : 'We move in together',
       description: language === 'es' 
         ? 'Vale y Dave firmaron un contrato para vivir juntos, un nuevo capítulo inició.'
-        : 'Vale and Dave signed a contract to live together, a new chapter began.',
+        : 'Vale and Dave sign a lease to rent a house together — a new chapter begins.',
       image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764967565/AGOSTO_DEL_2023_VALERIA_Y_DAVID_rjbk2x.jpg'
     },
     { 
@@ -105,7 +105,7 @@ export const Story = () => {
       title: language === 'es' ? 'Pedida en Japón' : 'Proposal in Japan',
       description: language === 'es' 
         ? 'En esta mágica tierra, nos elegimos con más firmeza.'
-        : 'In this magical land, we chose each other more firmly.',
+        : 'In this magical land, we sealed our promise.',
       image: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764967492/MAYO_2025_VALERIA_Y_DAVID_ibxkn2.jpg'
     },
     { 
@@ -124,10 +124,11 @@ export const Story = () => {
       titleEn: 'Our Life in Peru',
       icon: Heart,
       images: [
-        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110246/IMG_8020_uwzc1c.jpg', alt: 'Life in Peru', location: 'Peru' },
-        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110243/IMG_7753_jxuijl.jpg', alt: 'Life in Peru', location: 'Peru' },
-        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110236/IMG_7592_qdfjwm.jpg', alt: 'Life in Peru', location: 'Peru' },
-        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110232/IMG_4636_fkzoml.jpg', alt: 'Life in Peru', location: 'Peru' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1765314756/Vida_en_per%C3%BA_cxj9lo.jpg', alt: 'Life in Peru', location: 'Peru' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1765314755/Vida_en_peru_2_nbi75v.jpg', alt: 'Life in Peru', location: 'Peru' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1765314740/Vida_en_peru_3_d8xfmw.jpg', alt: 'Life in Peru', location: 'Peru' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1765314739/Vida_en_peru_1_vvmvyl.jpg', alt: 'Life in Peru', location: 'Peru' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1765314739/Vida_en_peru_4_zjl2a7.jpg', alt: 'Life in Peru', location: 'Peru' },
       ]
     },
     {
@@ -135,12 +136,10 @@ export const Story = () => {
       titleEn: 'Our Travels',
       icon: Plane,
       images: [
-        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110352/IMG_9506_u08hrv.jpg', alt: 'Travels', location: 'Adventure' },
-        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110351/IMG_5943_lhcbji.jpg', alt: 'Travels', location: 'Adventure' },
-        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110348/IMG_5031_jmxcfm.jpg', alt: 'Travels', location: 'Adventure' },
-        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110334/IMG_6210_xvc3zq.jpg', alt: 'Travels', location: 'Adventure' },
-        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110325/IMG_3872_lhctjn.jpg', alt: 'Travels', location: 'Adventure' },
-        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110322/IMG_1160_fq1o3m.jpg', alt: 'Travels', location: 'Adventure' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1765315117/Viajes_vale_dave_1_rbicge.jpg', alt: 'Travels', location: 'Adventure' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1765315116/Viajes_vale_dave_lsmhl7.jpg', alt: 'Travels', location: 'Adventure' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1765315116/Viajes_vale_dave_3_ht0rvu.jpg', alt: 'Travels', location: 'Adventure' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1765315116/Viajes_vale_dave_2_kpvywr.jpg', alt: 'Travels', location: 'Adventure' },
       ]
     }
   ];
