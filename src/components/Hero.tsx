@@ -17,9 +17,14 @@ export const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Mobile: Solid background color */}
+      <div className="absolute inset-0 md:hidden" style={{ backgroundColor: '#A35929' }}>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/90"></div>
+      </div>
+      
+      {/* Desktop: Background Image with Overlay */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed hidden md:block"
         style={{
           backgroundImage: 'url(https://res.cloudinary.com/dlyvsy67u/image/upload/f_webp/Foto_Valeria_y_David_tsc9ag)',
         }}
@@ -38,6 +43,18 @@ export const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-20 text-center">
         <div className="animate-fade-in">
+          {/* Mobile: Couple Photo */}
+          <div className="md:hidden mb-8">
+            <div className="aspect-[4/3] max-w-sm mx-auto rounded-xl overflow-hidden shadow-2xl">
+              <img 
+                src="https://res.cloudinary.com/dlyvsy67u/image/upload/f_webp/Foto_Valeria_y_David_tsc9ag"
+                alt="Valeria & David"
+                className="w-full h-full object-cover"
+                loading="eager"
+              />
+            </div>
+          </div>
+
           {/* Logo */}
           <div className="flex justify-center mb-6">
             <img 
@@ -119,8 +136,8 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      {/* Scroll Indicator - hidden on mobile */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
         <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
         </div>
