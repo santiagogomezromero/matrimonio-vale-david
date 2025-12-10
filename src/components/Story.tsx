@@ -129,6 +129,10 @@ export const Story = () => {
         { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1765314740/Vida_en_peru_3_d8xfmw.jpg', alt: 'Life in Peru', location: 'Peru' },
         { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1765314739/Vida_en_peru_1_vvmvyl.jpg', alt: 'Life in Peru', location: 'Peru' },
         { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1765314739/Vida_en_peru_4_zjl2a7.jpg', alt: 'Life in Peru', location: 'Peru' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110235/IMG_4798_tuongk.jpg', alt: 'Life in Peru', location: 'Peru' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110232/IMG_4637_v5qlec.jpg', alt: 'Life in Peru', location: 'Peru' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110236/IMG_7592_qdfjwm.jpg', alt: 'Life in Peru', location: 'Peru' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1765388855/Vida_en_peru_foto_valeria_uo8cyq.jpg', alt: 'Life in Peru', location: 'Peru' },
       ]
     },
     {
@@ -140,6 +144,11 @@ export const Story = () => {
         { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1765315116/Viajes_vale_dave_lsmhl7.jpg', alt: 'Travels', location: 'Adventure' },
         { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1765315116/Viajes_vale_dave_3_ht0rvu.jpg', alt: 'Travels', location: 'Adventure' },
         { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1765315116/Viajes_vale_dave_2_kpvywr.jpg', alt: 'Travels', location: 'Adventure' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1765388920/02eccad8-4c95-480d-a6a4-3f9b09f1aefc_nku9wn.jpg', alt: 'Travels', location: 'Adventure' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110334/IMG_5539_dgqydi.jpg', alt: 'Travels', location: 'Adventure' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1765389069/IMG_7053_2_rkk1jq.jpg', alt: 'Travels', location: 'Adventure' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1764110348/IMG_5031_jmxcfm.jpg', alt: 'Travels', location: 'Adventure' },
+        { src: 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1765389499/IMG_6294_2_qpgqim.jpg', alt: 'Travels', location: 'Adventure' },
       ]
     }
   ];
