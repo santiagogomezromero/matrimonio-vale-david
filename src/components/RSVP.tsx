@@ -29,7 +29,7 @@ export const RSVP = () => {
         <AnimatedSection animation="scale">
           <div className="flex justify-center mb-8">
             <div className="relative">
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl">
+              <div className="w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl">
                 <img 
                   src="https://res.cloudinary.com/dlyvsy67u/image/upload/v1764967922/Foto_confirmar_asistencia_yddi7z.jpg"
                   alt="Vale & David"
