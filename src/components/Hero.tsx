@@ -21,7 +21,7 @@ export const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
         style={{
-          backgroundImage: 'url(https://res.cloudinary.com/dlyvsy67u/image/upload/v1764967924/Foto_Valeria_y_David_tsc9ag.jpg)',
+          backgroundImage: 'url(https://res.cloudinary.com/dlyvsy67u/image/upload/f_webp/Foto_Valeria_y_David_tsc9ag)',
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-background/90"></div>
