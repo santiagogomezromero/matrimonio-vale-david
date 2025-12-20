@@ -115,6 +115,30 @@ export const Gifts = () => {
                   <p>David Amoruso</p>
                   <p>Valeria Fabiola Landeo Villarreal</p>
                 </div>
+
+                {/* Gift Registry Link */}
+                <div className="pt-4 border-t">
+                  <p className="text-center text-muted-foreground mb-4">
+                    Para agradecerte puedes registrar tu regalo aquí.
+                  </p>
+                  <Button 
+                    asChild 
+                    variant="outline"
+                    size="lg" 
+                    className="w-full"
+                  >
+                    <a 
+                      href="https://forms.gle/PPX4BNzBwYtxszv38" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2"
+                    >
+                      <Gift className="w-5 h-5" />
+                      Registrar regalo
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           ) : (
