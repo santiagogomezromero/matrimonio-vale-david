@@ -12,18 +12,29 @@ import { HelpCircle } from 'lucide-react';
 import { AnimatedSection } from '@/hooks/use-scroll-animation';
 
 export const FAQ = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
-  const faqs = [
+  const baseFaqs = [
     { question: t('faq.q1.question'), answer: t('faq.q1.answer') },
     { question: t('faq.q2.question'), answer: t('faq.q2.answer') },
     { question: t('faq.q3.question'), answer: t('faq.q3.answer') },
     { question: t('faq.q4.question'), answer: t('faq.q4.answer') },
     { question: t('faq.q5.question'), answer: t('faq.q5.answer') },
-    { question: t('faq.q6.question'), answer: t('faq.q6.answer') },
-    { question: t('faq.q7.question'), answer: t('faq.q7.answer') },
-    { question: t('faq.q8.question'), answer: t('faq.q8.answer') },
   ];
+
+  // q6 (Can I bring a guest?) only shows in Spanish
+  const faqs = language === 'es' 
+    ? [
+        ...baseFaqs,
+        { question: t('faq.q6.question'), answer: t('faq.q6.answer') },
+        { question: t('faq.q7.question'), answer: t('faq.q7.answer') },
+        { question: t('faq.q8.question'), answer: t('faq.q8.answer') },
+      ]
+    : [
+        ...baseFaqs,
+        { question: t('faq.q7.question'), answer: t('faq.q7.answer') },
+        { question: t('faq.q8.question'), answer: t('faq.q8.answer') },
+      ];
 
   return (
     <section id="faq" className="min-h-screen py-20 px-4 relative overflow-hidden">
