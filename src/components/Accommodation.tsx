@@ -10,12 +10,14 @@ import { AnimatedSection } from '@/hooks/use-scroll-animation';
 const hotelImages: Record<string, string> = {
   'Tierra Viva Valle Sagrado': 'https://tierravivahoteles.com/wp-content/uploads/2023/03/TVVS-11-Areas-verdes.jpg',
   'Tambo del Inka': 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1765316374/Tambodelinka_idecvb.jpg',
+  'Andean Wings': 'https://andeanwingsvalley.com/wp-content/uploads/2024/03/vista-interior-awv.jpg',
   'Casa de la Chola': 'https://casadelachola.com/wp-content/uploads/2019/06/gal5.jpg',
   'Taypikala Deluxe Valle Sagrado': 'https://www.taypikala.com/media/uploads/hotelextra/taypikala-valle-jardin-cuatro.jpg?q=pr:sharp/rs:fill/w:650/h:600/g:ce/f:jpg',
   'Belmond Hotel Río Sagrado': 'https://img.belmond.com/f_auto/t_960x667/photos/rsg/rsg-ext21.jpg',
   'Las Casitas del Arcoiris': 'https://res.cloudinary.com/dlyvsy67u/image/upload/v1765316374/Casitas_arcorirs_xcuj3t.jpg',
   'Lizzy Wasi Boutique Hotel': 'https://lizzywasi.com/assets/img/gallery/lizzy_wasi_6.png',
   'Wifala Harmony Hotel': 'https://s3-cdn.hotellinksolutions.com/hls/data/6312/gallery/fachada-principal_1671809996.jpg',
+  'Hotel Amaru Valle': 'https://amaruvalle.com/wp-content/uploads/2022/12/12_amaru_valle-1.webp',
 };
 
 export const Accommodation = () => {
@@ -47,6 +49,20 @@ export const Accommodation = () => {
       formLink: language === 'es' 
         ? 'https://docs.google.com/document/d/1GgDTjk7PK6NuBmIOjcMwROHkxr85aiRd/edit?usp=drive_link'
         : 'https://docs.google.com/document/d/1o_yHIJd-ARf1S-72TDS7uvYfN5bKgpnC/edit?usp=drive_link&ouid=101061994273886926109&rtpof=true&sd=true',
+    },
+    {
+      name: 'Andean Wings',
+      price: '$70–90',
+      description: language === 'es' 
+        ? 'Hotel boutique con servicio personalizado.' 
+        : 'Boutique hotel with personalized service.',
+      location: 'Urubamba',
+      website: 'https://maps.app.goo.gl/DyyAdVhzS4eNhdHN9?g_st=ic',
+      phone: '+51 933 846 064',
+      featured: true,
+      notes: language === 'es'
+        ? '$70-90 USD/noche (incluye IGV y desayuno). Mencionar grupo "David Amoruso" al reservar.'
+        : '$70-90 USD/night (includes IGV and breakfast). Mention "David Amoruso" group when booking.',
     },
   ];
 
@@ -107,6 +123,15 @@ export const Accommodation = () => {
       website: 'https://www.wifalaharmonyhotel.com/en/',
       phone: '+51 986 821 511',
       email: 'reservas@wifalaharmonyhotel.com',
+    },
+    {
+      name: 'Hotel Amaru Valle',
+      price: language === 'es' ? 'Consultar' : 'Inquire',
+      description: language === 'es' 
+        ? 'Hotel acogedor en el Valle Sagrado.' 
+        : 'Cozy hotel in the Sacred Valley.',
+      location: 'Urubamba',
+      website: 'https://maps.app.goo.gl/xgKxGiWsVY1o4JhB6?g_st=ic',
     },
   ];
 
