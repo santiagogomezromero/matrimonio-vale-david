@@ -64,7 +64,7 @@ const translations = {
     'trip.transport.drivers': 'Taxistas de confianza',
     'trip.transport.cost': 'Costo aproximado: 120-150 soles por trayecto ($35-$45)',
     'trip.shuttle.title': 'Servicio de transporte de cortesía',
-    'trip.shuttle.description': 'Para las celebraciones del 1 y 2 de mayo, contaremos con un servicio de transporte que hará paradas en los hoteles Tierra Viva, Tambo del Inka y Andean Wings. También hará una parada en una zona céntrica de Urubamba.',
+    'trip.shuttle.description': 'Para las celebraciones del 1 y 2 de mayo, contaremos con un servicio de transporte que hará paradas en los hoteles Andean Wings, Tambo del Inka y Tierra Viva. También hará una parada en una zona céntrica de Urubamba. Para reservas en Andean Wings, contactar al +51 933 846 064.',
 
     // Accommodation
     'accommodation.title': 'Hospedaje',
@@ -200,7 +200,7 @@ const translations = {
     'trip.transport.drivers': 'Trusted Drivers',
     'trip.transport.cost': 'Approximate cost: 120-150 Peruvian Soles ($35-$45) per trip',
     'trip.shuttle.title': 'Complimentary Shuttle Service',
-    'trip.shuttle.description': 'For the May 1st and 2nd celebrations, we will have a shuttle service with stops at Tierra Viva, Tambo del Inka, and Andean Wings hotels. It will also stop at a central location in Urubamba.',
+    'trip.shuttle.description': 'For the May 1st and 2nd celebrations, we will have a shuttle service with stops at Andean Wings, Tambo del Inka, and Tierra Viva hotels. It will also stop at a central location in Urubamba. For reservations at Andean Wings, contact +51 933 846 064.',
 
     // Accommodation
     'accommodation.title': 'Accommodation',
