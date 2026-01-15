@@ -36,6 +36,7 @@ export const Accommodation = () => {
       email: 'reservas@tierravivahoteles.com',
       featured: true,
       promoCode: true,
+      soldOut: true,
     },
     {
       name: 'Tambo del Inka',
@@ -195,6 +196,11 @@ export const Accommodation = () => {
       <CardHeader className="pb-2">
         <CardTitle className="text-xl font-display leading-tight">
           {hotel.name}
+          {'soldOut' in hotel && hotel.soldOut && (
+            <span className="block text-destructive font-medium text-sm mt-1">
+              {language === 'es' ? '(Habitaciones Agotadas)' : '(Rooms Sold Out)'}
+            </span>
+          )}
         </CardTitle>
         <CardDescription className="text-sm">{hotel.description}</CardDescription>
       </CardHeader>
