@@ -62,8 +62,8 @@ export const Accommodation = () => {
       phone: '+51 933 846 064',
       featured: true,
       notes: language === 'es'
-        ? '$70-90 USD/noche (incluye IGV y desayuno). Mencionar grupo "David Amoruso" al reservar.'
-        : '$70-90 USD/night (includes IGV and breakfast). Mention "David Amoruso" group when booking.',
+        ? '$70-90 USD/noche (incluye IGV y desayuno). Mencionar grupo "David Amoruso" al reservar. Para reservas, contactar al +51 933 846 064.'
+        : '$70-90 USD/night (includes IGV and breakfast). Mention "David Amoruso" group when booking. For reservations, contact +51 933 846 064.',
     },
   ];
 
