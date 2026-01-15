@@ -303,10 +303,28 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   );
 };
 
-export const useLanguage = () => {
+export const useLanguage = (): LanguageContextType => {
   const context = useContext(LanguageContext);
+
+  // Defensive fallback: prevents a blank screen if the Provider is ever missing
+  // (or if a bundling/module-resolution issue causes context mismatch).
   if (!context) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
+    if (import.meta.env.DEV) {
+      console.warn('useLanguage used without LanguageProvider; using fallback context.');
+    }
+
+    return {
+      language: 'es',
+      toggleLanguage: () => {},
+      t: (key: string) => {
+        return (
+          translations.es[key as keyof typeof translations.es] ||
+          translations.en[key as keyof typeof translations.en] ||
+          key
+        );
+      },
+    };
   }
+
   return context;
 };
