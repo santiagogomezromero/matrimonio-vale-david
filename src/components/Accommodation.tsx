@@ -165,6 +165,13 @@ export const Accommodation = () => {
       link: 'https://www.airbnb.com/l/DW65nxIQ',
       image: 'https://a0.muscache.com/im/pictures/ff62c626-fd2a-4dd5-bbe1-35ab5f24a75a.jpg?im_w=1200',
     },
+    {
+      name: 'Casa en Urubamba',
+      description: language === 'es' ? 'Encantadora casa en el Valle Sagrado.' : 'Charming house in the Sacred Valley.',
+      location: 'Urubamba',
+      link: 'https://www.airbnb.com/rooms/1030483?check_in=2026-04-30&check_out=2026-05-03&guests=1&adults=1',
+      image: 'https://a0.muscache.com/im/pictures/miso/Hosting-1030483/original/bc5765a3-4be6-4bcc-bdac-ce3b78024e5d.jpeg?im_w=1200',
+    },
   ];
 
   const renderHotelCard = (hotel: typeof featuredHotels[0] | typeof otherHotels[0], index: number, isFeatured: boolean = false) => (
