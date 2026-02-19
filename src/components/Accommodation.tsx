@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { MapPin, ExternalLink, Phone, Mail, Home, FileText } from 'lucide-react';
 import { IncaDivider, IntiSun, IncaStar } from '@/components/ui/inca-patterns';
 import { AnimatedSection } from '@/hooks/use-scroll-animation';
+import casaUrubambaImg from '@/assets/casa-urubamba.jpg';
 
 // Real hotel images from official websites
 const hotelImages: Record<string, string> = {
@@ -170,7 +171,7 @@ export const Accommodation = () => {
       description: language === 'es' ? 'Encantadora casa en el Valle Sagrado.' : 'Charming house in the Sacred Valley.',
       location: 'Urubamba',
       link: 'https://www.airbnb.com/rooms/1030483?check_in=2026-04-30&check_out=2026-05-03&guests=1&adults=1',
-      image: 'https://a0.muscache.com/im/pictures/miso/Hosting-1030483/original/bc5765a3-4be6-4bcc-bdac-ce3b78024e5d.jpeg?im_w=1200',
+      image: casaUrubambaImg,
     },
   ];
 
