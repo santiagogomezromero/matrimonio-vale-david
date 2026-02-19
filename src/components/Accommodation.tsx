@@ -19,6 +19,7 @@ const hotelImages: Record<string, string> = {
   'Lizzy Wasi Boutique Hotel': 'https://lizzywasi.com/assets/img/gallery/lizzy_wasi_6.png',
   'Wifala Harmony Hotel': 'https://s3-cdn.hotellinksolutions.com/hls/data/6312/gallery/fachada-principal_1671809996.jpg',
   'Hotel Amaru Valle': 'https://amaruvalle.com/wp-content/uploads/2022/12/12_amaru_valle-1.webp',
+  'Casa en Urubamba': casaUrubambaImg,
 };
 
 export const Accommodation = () => {
