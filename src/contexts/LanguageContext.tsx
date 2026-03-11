@@ -113,10 +113,10 @@ const translations = {
 
     // Gifts
     'gifts.title': 'Regalos',
-    'gifts.message1': 'Agradecemos enormemente su esfuerzo por viajar hasta Cusco y permitirnos celebrar juntos. Para nosotros, eso es más de lo que podríamos pedir. No esperamos regalos, pero si aún así desean obsequiarnos algo, en lugar de regalos materiales, los invitamos a contribuir a nuestro Fondo para la Luna de Miel, con el cual planeamos visitar Europa en mayo después de la celebración de la boda.',
+    'gifts.message1': 'Agradecemos enormemente su esfuerzo por viajar hasta Cusco y permitirnos celebrar juntos. Para nosotros, eso es más de lo que podríamos pedir. No esperamos regalos, pero si aún así desean obsequiarnos algo, los invitamos a contribuir a nuestro fondo para la luna de miel (el destino elegido: Las Islas Canarias) o para nuestros proyectos juntos como pareja.',
     'gifts.message2': 'Si prefieres hacer tu contribución mediante transferencia, aquí encontrarás los datos necesarios. Agradecemos de corazón tu apoyo y cariño.',
     'gifts.thanks': 'Con amor y gratitud, Vale & David',
-    'gifts.banking.title': 'Datos bancarios',
+    'gifts.banking.title': 'Regalos en efectivo',
     'gifts.banking.soles': 'Soles',
     'gifts.banking.dollars': 'Dólares',
     'gifts.banking.account': 'Cuenta',
@@ -249,7 +249,7 @@ const translations = {
 
     // Gifts
     'gifts.title': 'Gifts',
-    'gifts.message1': 'We really appreciate your effort to travel so far to share in our celebration, and for us, that\'s more than we could ask for. Gifts are not at all expected or required. But if you still feel that you would like to give something, instead of physical gifts we invite you to contribute to our Honeymoon Fund, where we are planning to visit Europe in May following the wedding celebration.',
+    'gifts.message1': 'We really appreciate your effort to travel so far to share in our celebration, and for us, that\'s more than we could ask for. Gifts are not at all expected or required. But if you still feel that you would like to give something, instead of physical gifts we invite you to contribute to our Honeymoon Fund (destination: Canary Islands), or to our projects together as a couple.',
     'gifts.message2': '',
     'gifts.thanks': 'With love and gratitude, Vale & David',
     'gifts.banking.title': 'Banking Details',
