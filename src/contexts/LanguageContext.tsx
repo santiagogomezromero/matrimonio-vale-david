@@ -116,7 +116,7 @@ const translations = {
     'gifts.message1': 'Agradecemos enormemente su esfuerzo por viajar hasta Cusco y permitirnos celebrar juntos. Para nosotros, eso es más de lo que podríamos pedir. No esperamos regalos, pero si aún así desean obsequiarnos algo, los invitamos a contribuir a nuestro fondo para la luna de miel (el destino elegido: Las Islas Canarias) o para nuestros proyectos juntos como pareja.',
     'gifts.message2': 'Si prefieres hacer tu contribución mediante transferencia, aquí encontrarás los datos necesarios. Agradecemos de corazón tu apoyo y cariño.',
     'gifts.thanks': 'Con amor y gratitud, Vale & David',
-    'gifts.banking.title': 'Datos bancarios',
+    'gifts.banking.title': 'Regalos en efectivo',
     'gifts.banking.soles': 'Soles',
     'gifts.banking.dollars': 'Dólares',
     'gifts.banking.account': 'Cuenta',

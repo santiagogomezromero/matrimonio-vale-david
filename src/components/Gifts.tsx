@@ -159,21 +159,22 @@ export const Gifts = () => {
                     </a>
                   </Button>
                 </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
           ) : (
             <Card className="bg-card/95 backdrop-blur-sm">
               <CardContent className="p-6 space-y-6">
                 <div className="flex items-center justify-center gap-3">
                   <Chakana className="w-5 h-5 opacity-50" />
                   <h3 className="text-xl font-display text-center text-primary uppercase">
-                    US Wedding Registry
+                    Wedding Registry
                   </h3>
                   <Chakana className="w-5 h-5 opacity-50" />
                 </div>
                 
                 <p className="text-center text-muted-foreground">
-                  We've set up a wedding registry for our US guests. Click below to view our registry and contribute to our honeymoon fund.
+                  We've set up a wedding registry for our guests. Click below to view our registry and contribute to our honeymoon fund or our projects together.
                 </p>
                 
                 <Button 
@@ -188,7 +189,7 @@ export const Gifts = () => {
                     className="flex items-center justify-center gap-2"
                   >
                     <Gift className="w-5 h-5" />
-                    View US Wedding Registry
+                    View Wedding Registry
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 </Button>
