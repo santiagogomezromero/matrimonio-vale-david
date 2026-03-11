@@ -64,15 +64,35 @@ export const Gifts = () => {
           {/* Right Column - Bank Details (Spanish) or Registry Link (English) */}
           <AnimatedSection animation="fade-right" delay={200}>
           {language === 'es' ? (
-            <Card className="bg-card/95 backdrop-blur-sm">
-              <CardContent className="p-6 space-y-6">
-                <div className="flex items-center justify-center gap-3">
-                  <Chakana className="w-5 h-5 opacity-50" />
-                  <h3 className="text-xl font-display text-center text-primary uppercase">
-                    {t('gifts.banking.title')}
-                  </h3>
-                  <Chakana className="w-5 h-5 opacity-50" />
-                </div>
+            <div className="space-y-6">
+              {/* Specific Gift Registry Button */}
+              <Button 
+                asChild 
+                size="lg" 
+                className="w-full bg-[#8B6F4E] hover:bg-[#7A5F3E] text-white"
+              >
+                <a 
+                  href="https://withjoy.com/david-and-valeria-may-26/registry" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2"
+                >
+                  <Gift className="w-5 h-5" />
+                  Contribuye con un regalo específico
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </Button>
+
+              {/* Cash Gifts Card */}
+              <Card className="bg-card/95 backdrop-blur-sm">
+                <CardContent className="p-6 space-y-6">
+                  <div className="flex items-center justify-center gap-3">
+                    <Chakana className="w-5 h-5 opacity-50" />
+                    <h3 className="text-xl font-display text-center text-primary uppercase">
+                      {t('gifts.banking.title')}
+                    </h3>
+                    <Chakana className="w-5 h-5 opacity-50" />
+                  </div>
                 
                 {/* BCP Soles */}
                 <div className="space-y-2 pb-4 border-b">
