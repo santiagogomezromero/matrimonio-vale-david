@@ -249,7 +249,7 @@ const translations = {
 
     // Gifts
     'gifts.title': 'Gifts',
-    'gifts.message1': 'We really appreciate your effort to travel so far to share in our celebration, and for us, that\'s more than we could ask for. Gifts are not at all expected or required. But if you still feel that you would like to give something, instead of physical gifts we invite you to contribute to our Honeymoon Fund, where we are planning to visit Europe in May following the wedding celebration.',
+    'gifts.message1': 'We really appreciate your effort to travel so far to share in our celebration, and for us, that\'s more than we could ask for. Gifts are not at all expected or required. But if you still feel that you would like to give something, instead of physical gifts we invite you to contribute to our Honeymoon Fund (destination: Canary Islands), or to our projects together as a couple.',
     'gifts.message2': '',
     'gifts.thanks': 'With love and gratitude, Vale & David',
     'gifts.banking.title': 'Banking Details',
