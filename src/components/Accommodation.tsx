@@ -127,15 +127,6 @@ export const Accommodation = () => {
       phone: '+51 986 821 511',
       email: 'reservas@wifalaharmonyhotel.com',
     },
-    {
-      name: 'Hotel Amaru Valle',
-      price: language === 'es' ? 'Consultar' : 'Inquire',
-      description: language === 'es' 
-        ? 'Hotel acogedor en el Valle Sagrado.' 
-        : 'Cozy hotel in the Sacred Valley.',
-      location: 'Urubamba',
-      website: 'https://maps.app.goo.gl/xgKxGiWsVY1o4JhB6?g_st=ic',
-    },
   ];
 
   const airbnbs = [

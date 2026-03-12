@@ -58,14 +58,9 @@ export const Gifts = () => {
             <p className="text-muted-foreground italic">
               {t('gifts.thanks')}
             </p>
-          </div>
-          </AnimatedSection>
 
-          {/* Right Column - Bank Details (Spanish) or Registry Link (English) */}
-          <AnimatedSection animation="fade-right" delay={200}>
-          {language === 'es' ? (
-            <div className="space-y-6">
-              {/* Specific Gift Registry Button */}
+            {/* Gift Registry Button - below thanks message */}
+            {language === 'es' && (
               <Button 
                 asChild 
                 size="lg" 
@@ -78,11 +73,18 @@ export const Gifts = () => {
                   className="flex items-center justify-center gap-2"
                 >
                   <Gift className="w-5 h-5" />
-                  Contribuye con un regalo específico
+                  Lista de Regalos
                   <ExternalLink className="w-4 h-4" />
                 </a>
               </Button>
+            )}
+          </div>
+          </AnimatedSection>
 
+          {/* Right Column - Bank Details (Spanish) or Registry Link (English) */}
+          <AnimatedSection animation="fade-right" delay={200}>
+          {language === 'es' ? (
+            <div className="space-y-6">
               {/* Cash Gifts Card */}
               <Card className="bg-card/95 backdrop-blur-sm">
                 <CardContent className="p-6 space-y-6">
