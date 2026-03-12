@@ -58,6 +58,26 @@ export const Gifts = () => {
             <p className="text-muted-foreground italic">
               {t('gifts.thanks')}
             </p>
+
+            {/* Gift Registry Button - below thanks message */}
+            {language === 'es' && (
+              <Button 
+                asChild 
+                size="lg" 
+                className="w-full bg-[#8B6F4E] hover:bg-[#7A5F3E] text-white"
+              >
+                <a 
+                  href="https://withjoy.com/david-and-valeria-may-26/registry" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2"
+                >
+                  <Gift className="w-5 h-5" />
+                  Lista de Regalos
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </Button>
+            )}
           </div>
           </AnimatedSection>
 
