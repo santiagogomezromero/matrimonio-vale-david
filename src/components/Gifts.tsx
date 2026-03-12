@@ -156,7 +156,7 @@ export const Gifts = () => {
                       className="flex items-center justify-center gap-2"
                     >
                       <Gift className="w-5 h-5" />
-                      Registrar regalo
+                      (Opcional) Registra tu regalo en efectivo
                       <ExternalLink className="w-4 h-4" />
                     </a>
                   </Button>
