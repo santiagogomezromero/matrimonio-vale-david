@@ -85,24 +85,6 @@ export const Gifts = () => {
           <AnimatedSection animation="fade-right" delay={200}>
           {language === 'es' ? (
             <div className="space-y-6">
-              {/* Specific Gift Registry Button */}
-              <Button 
-                asChild 
-                size="lg" 
-                className="w-full bg-[#8B6F4E] hover:bg-[#7A5F3E] text-white"
-              >
-                <a 
-                  href="https://withjoy.com/david-and-valeria-may-26/registry" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2"
-                >
-                  <Gift className="w-5 h-5" />
-                  Contribuye con un regalo específico
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              </Button>
-
               {/* Cash Gifts Card */}
               <Card className="bg-card/95 backdrop-blur-sm">
                 <CardContent className="p-6 space-y-6">
