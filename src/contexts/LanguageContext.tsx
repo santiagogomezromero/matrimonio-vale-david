@@ -187,7 +187,7 @@ const translations = {
     'schedule.day2.event': 'Lake & Traditions – Lunch to honor Cusco',
     'schedule.day2.description': 'We added an extra day to the celebration to enjoy Cusco traditions, a delicious lunch, traditional music, and most importantly to share more time with all of you.',
     'schedule.day2.dress.title': 'Dress Code',
-    'schedule.day2.dress.code': 'Casual (bring layers in case it\'s cold)',
+    'schedule.day2.dress.code': 'Sport Casual (Jeans)\n(Temperature from 65°F to 45°F)',
     'schedule.day2.location.title': 'Where?',
     'schedule.day2.location.address': 'Playa La Sirena, Laguna Piuray, Chinchero, Cusco',
 
