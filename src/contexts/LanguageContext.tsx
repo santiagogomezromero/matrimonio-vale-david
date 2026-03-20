@@ -51,7 +51,7 @@ const translations = {
     'schedule.day2.event': 'Laguna y Tradición – Almuerzo para honrar a Cusco',
     'schedule.day2.description': 'Queremos honrar esta tierra hermosa que tanto nos ha enseñado. Disfrutaremos de tradiciones cuzqueñas, un delicioso almuerzo, música típica y lo más importante: compartir más tiempo con ustedes.',
     'schedule.day2.dress.title': 'Código de vestimenta',
-    'schedule.day2.dress.code': 'Sport Casual (ir abrigados)',
+    'schedule.day2.dress.code': 'Sport Casual (Jeans)\n(Temperatura desde 18 °C hasta 7 °C)',
     'schedule.day2.location.title': '¿Dónde?',
     'schedule.day2.location.address': 'Playa La Sirena, Laguna Piuray, Chinchero, Cusco',
 
