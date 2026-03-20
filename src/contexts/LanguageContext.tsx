@@ -41,7 +41,7 @@ const translations = {
     'schedule.day1.event': 'Wedding Fest – Ceremonia y fiesta',
     'schedule.day1.description': 'Con ustedes como testigos y en presencia de nuestros padres, diremos "sí" para reafirmarnos como compañeros de vida. La ceremonia será a la 1:30 p.m. (pedimos puntualidad). La celebraremos será en la Cervecería del Valle con música en vivo, comida rica y mucha alegría.',
     'schedule.day1.dress.title': 'Código de vestimenta',
-    'schedule.day1.dress.code': 'Casual, blanco, beige y colores tierra',
+    'schedule.day1.dress.code': 'Casual > Paleta de Colores: blancos, beiges, cremas y marrones.\n(Temperatura 21 °C durante el día / 7 °C durante la noche)',
     'schedule.day1.dress.reference': 'Ver referencias de Pinterest',
     'schedule.day1.location.title': '¿Dónde?',
     'schedule.day1.location.address': 'Cervecería del Valle Sagrado - Taproom Pachar',
