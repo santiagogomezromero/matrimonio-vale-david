@@ -177,7 +177,7 @@ const translations = {
     'schedule.day1.event': 'Wedding Fest – Ceremony and Celebration',
     'schedule.day1.description': 'With you as witnesses, we will say "I do" to reaffirm ourselves as life partners. The ceremony will be at 1:30 p.m. (please be punctual) and then we will celebrate at the Brewery with live music, traditional food and lots of joy.',
     'schedule.day1.dress.title': 'Dress Code',
-    'schedule.day1.dress.code': 'Casual – white, beige and earth tones',
+    'schedule.day1.dress.code': 'Casual > Color Palette: whites, beiges, creams, and browns.\n(Temperature 69°F during the day / 45°F at night)',
     'schedule.day1.dress.reference': 'View Pinterest references',
     'schedule.day1.location.title': 'Where?',
     'schedule.day1.location.address': 'Cervecería del Valle Sagrado - Taproom Pachar',
