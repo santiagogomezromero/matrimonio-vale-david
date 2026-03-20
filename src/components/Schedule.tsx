@@ -89,7 +89,7 @@ export const Schedule = () => {
                 <Shirt className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-semibold">{t('schedule.day1.dress.title')}</p>
-                  <p className="text-muted-foreground">{t('schedule.day1.dress.code')}</p>
+                  <p className="text-muted-foreground whitespace-pre-line">{t('schedule.day1.dress.code')}</p>
                   <a 
                     href="https://pin.it/5bulOfaRK" 
                     target="_blank" 
@@ -165,7 +165,7 @@ export const Schedule = () => {
                 <Shirt className="w-5 h-5 text-secondary mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-semibold">{t('schedule.day2.dress.title')}</p>
-                  <p className="text-muted-foreground">{t('schedule.day2.dress.code')}</p>
+                  <p className="text-muted-foreground whitespace-pre-line">{t('schedule.day2.dress.code')}</p>
                 </div>
               </div>
               

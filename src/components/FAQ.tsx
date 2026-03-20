@@ -100,7 +100,7 @@ export const FAQ = () => {
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground pb-5 pl-11 animate-accordion-down">
-                  <div className="border-l-2 border-primary/30 pl-4">
+                  <div className="border-l-2 border-primary/30 pl-4 whitespace-pre-line">
                     {faq.answer}
                   </div>
                 </AccordionContent>
