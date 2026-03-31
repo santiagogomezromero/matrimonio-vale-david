@@ -189,7 +189,7 @@ const translations = {
     'schedule.day2.dress.title': 'Dress Code',
     'schedule.day2.dress.code': 'Sport Casual (Jeans)\n(Temperature from 65°F to 45°F)',
     'schedule.day2.location.title': 'Where?',
-    'schedule.day2.location.address': 'Playa La Sirena, Laguna Piuray, Chinchero, Cusco',
+    'schedule.day2.location.address': 'Laguna de Huaypo, Cusco',
 
     // Trip
     'trip.title': 'The Trip',

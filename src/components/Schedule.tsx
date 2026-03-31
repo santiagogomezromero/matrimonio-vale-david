@@ -187,7 +187,7 @@ export const Schedule = () => {
                 className="w-full mt-4"
               >
                 <a 
-                  href="https://maps.app.goo.gl/B2KApJNHSqBcB9zr5" 
+                  href="https://goo.gl/maps/sfiW28qoQf9kumM79?g_st=awb" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
