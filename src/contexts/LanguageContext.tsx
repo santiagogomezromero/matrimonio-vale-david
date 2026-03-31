@@ -28,7 +28,7 @@ const translations = {
     'hero.date1': 'Wedding Fest – 1 de mayo',
     'hero.location1': 'Pachar, Ollantaytambo, Cusco',
     'hero.date2': 'Laguna y Tradición – 2 de mayo',
-    'hero.location2': 'Playa La Sirena, Laguna Piuray, Chinchero, Cusco',
+    'hero.location2': 'Laguna de Huaypo, Cusco',
     'hero.intro': 'Nos casamos en el Valle Sagrado de los Incas en Cusco. El lugar donde nos conocimos y donde seguimos echando raíces.',
     'hero.btn.schedule': 'Ver Agenda',
     'hero.btn.rsvp': 'Asistencia',
