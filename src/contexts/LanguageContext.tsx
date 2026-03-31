@@ -28,7 +28,7 @@ const translations = {
     'hero.date1': 'Wedding Fest – 1 de mayo',
     'hero.location1': 'Pachar, Ollantaytambo, Cusco',
     'hero.date2': 'Laguna y Tradición – 2 de mayo',
-    'hero.location2': 'Playa La Sirena, Laguna Piuray, Chinchero, Cusco',
+    'hero.location2': 'Laguna de Huaypo, Cusco',
     'hero.intro': 'Nos casamos en el Valle Sagrado de los Incas en Cusco. El lugar donde nos conocimos y donde seguimos echando raíces.',
     'hero.btn.schedule': 'Ver Agenda',
     'hero.btn.rsvp': 'Asistencia',
@@ -53,7 +53,7 @@ const translations = {
     'schedule.day2.dress.title': 'Código de vestimenta',
     'schedule.day2.dress.code': 'Sport Casual (Jeans)\n(Temperatura desde 18 °C hasta 7 °C)',
     'schedule.day2.location.title': '¿Dónde?',
-    'schedule.day2.location.address': 'Playa La Sirena, Laguna Piuray, Chinchero, Cusco',
+    'schedule.day2.location.address': 'Laguna de Huaypo, Cusco',
 
     // Trip
     'trip.title': 'El viaje',
@@ -164,7 +164,7 @@ const translations = {
     'hero.date1': 'Wedding Fest – May 1st',
     'hero.location1': 'Pachar, Ollantaytambo, Cusco',
     'hero.date2': 'Lake & Tradition – May 2nd',
-    'hero.location2': 'Playa La Sirena, Laguna Piuray, Chinchero, Cusco',
+    'hero.location2': 'Laguna de Huaypo, Cusco',
     'hero.intro': 'We are getting married in the Sacred Valley of the Incas in Cusco. The place where we met and where we continue to put down roots.',
     'hero.btn.schedule': 'View Schedule',
     'hero.btn.rsvp': 'RSVP',
@@ -189,7 +189,7 @@ const translations = {
     'schedule.day2.dress.title': 'Dress Code',
     'schedule.day2.dress.code': 'Sport Casual (Jeans)\n(Temperature from 65°F to 45°F)',
     'schedule.day2.location.title': 'Where?',
-    'schedule.day2.location.address': 'Playa La Sirena, Laguna Piuray, Chinchero, Cusco',
+    'schedule.day2.location.address': 'Laguna de Huaypo, Cusco',
 
     // Trip
     'trip.title': 'The Trip',
