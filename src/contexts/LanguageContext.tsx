@@ -200,7 +200,7 @@ const translations = {
     'trip.transport.drivers': 'Trusted Drivers',
     'trip.transport.cost': 'Approximate cost: 120-150 Peruvian Soles ($35-$45) per trip',
     'trip.shuttle.title': 'Complimentary Shuttle Service',
-    'trip.shuttle.description': 'For the May 1st and 2nd celebrations, we will have a shuttle service with stops at Andean Wings, Tambo del Inka, and Tierra Viva hotels. It will also stop at a central location in Urubamba (Plaza de Armas).',
+    'trip.shuttle.description': 'For the May 1st and 2nd celebrations, we will have a shuttle service with stops at Andean Wings, Tambo del Inka, and Tierra Viva hotels. It will also stop at a central location in Urubamba.',
 
     // Accommodation
     'accommodation.title': 'Accommodation',
