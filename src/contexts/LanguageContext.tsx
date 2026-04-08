@@ -64,7 +64,7 @@ const translations = {
     'trip.transport.drivers': 'Taxistas de confianza',
     'trip.transport.cost': 'Costo aproximado: 120-150 soles por trayecto ($35-$45)',
     'trip.shuttle.title': 'Servicio de transporte de cortesía',
-    'trip.shuttle.description': 'Para las celebraciones del 1 y 2 de mayo, contaremos con un servicio de transporte que hará paradas en los hoteles Andean Wings, Tambo del Inka y Tierra Viva. También hará una parada en una zona céntrica de Urubamba (en la Plaza de Armas).',
+    'trip.shuttle.description': 'Para las celebraciones del 1 y 2 de mayo, contaremos con un servicio de transporte que hará paradas en los hoteles Andean Wings, Tambo del Inka y Tierra Viva. También hará una parada en una zona céntrica de Urubamba.',
 
     // Accommodation
     'accommodation.title': 'Hospedaje',
