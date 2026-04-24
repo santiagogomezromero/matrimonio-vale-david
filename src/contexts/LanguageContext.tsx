@@ -51,7 +51,7 @@ const translations = {
     'schedule.day2.event': 'Laguna y Tradición – Almuerzo para honrar a Cusco',
     'schedule.day2.description': 'Queremos honrar esta tierra hermosa que tanto nos ha enseñado. Disfrutaremos de tradiciones cuzqueñas, un delicioso almuerzo, música típica y lo más importante: compartir más tiempo con ustedes.',
     'schedule.day2.dress.title': 'Código de vestimenta',
-    'schedule.day2.dress.code': 'Sport Casual (Jeans)\n(Temperatura desde 18 °C hasta 7 °C)',
+    'schedule.day2.dress.code': 'Wear whatever is comfortable for you! (Casual)\n(Temperatura desde 18 °C hasta 7 °C)',
     'schedule.day2.location.title': '¿Dónde?',
     'schedule.day2.location.address': 'Laguna de Huaypo, Cusco',
 
@@ -187,7 +187,7 @@ const translations = {
     'schedule.day2.event': 'Lake & Traditions – Lunch to honor Cusco',
     'schedule.day2.description': 'We added an extra day to the celebration to enjoy Cusco traditions, a delicious lunch, traditional music, and most importantly to share more time with all of you.',
     'schedule.day2.dress.title': 'Dress Code',
-    'schedule.day2.dress.code': 'Sport Casual (Jeans)\n(Temperature from 65°F to 45°F)',
+    'schedule.day2.dress.code': 'Wear whatever is comfortable for you! (Casual)\n(Temperature from 65°F to 45°F)',
     'schedule.day2.location.title': 'Where?',
     'schedule.day2.location.address': 'Laguna de Huaypo, Cusco',
 
